@@ -1,7 +1,7 @@
 import { $, createDomElement, formata_cpf } from "./lib/funcoesUtilitarias.js";
 import { AcaoRegistro, CampoDosRegistros, ZayDataTable } from "./lib/ZayDataTable.js";
 
-class Mensalista
+export class Mensalista
 {
     constructor(
         public id: string,

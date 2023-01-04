@@ -36,3 +36,23 @@ export function remove_mascara_cpf(cpf) {
     });
     return cpf_sem_mascara.join('');
 }
+export function formata_data(data) {
+    let somente_data = data.split(" ")[0];
+    const arrData = somente_data.split("-");
+    arrData.reverse();
+    somente_data = arrData.join("-");
+    data = `${somente_data} ${data.split(" ")[1]}`;
+    data = data.replace('-', '/');
+    data = data.replace('-', '/');
+    return data.substr(0, data.length - 3);
+}
+export function formata_data_sem_horario(string) {
+    let somente_data = string.split(" ")[0];
+    const arrData = somente_data.split("-");
+    arrData.reverse();
+    somente_data = arrData.join("-");
+    string = somente_data;
+    string = string.replace('-', '/');
+    string = string.replace('-', '/');
+    return string;
+}
