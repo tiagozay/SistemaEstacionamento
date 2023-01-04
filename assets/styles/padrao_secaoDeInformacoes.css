@@ -1,0 +1,62 @@
+.secaoDeInformacoes{
+    background-color: rgb(251, 251, 251);
+    border-radius: 4px;
+    margin-top: 15px;
+    box-shadow: 0 0 6px rgb(188, 188, 188);
+}
+.secaoDeInformacoes #divBtnNovo{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px;
+    border-bottom: 1px rgb(198, 198, 198) solid;
+}
+.secaoDeInformacoes #btnAdicionarNovo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    background-color: #19B5FE;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.secaoDeInformacoes #btnAdicionarNovo i{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.secaoDeInformacoes .divCamposSelectEBuscaDaTabela{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.secaoDeInformacoes .divCamposSelectEBuscaDaTabela label{
+    font-size: 15px;
+}
+.secaoDeInformacoes .selectFiltros{
+    background-color: #f4f4f4;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 6px 20px 6px 10px;
+    border-radius: 5px;
+    appearance: none;
+    background-image: url(../icons/down-arrow.svg);
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: center right 5px;
+    background-size: 10px;
+}
+.secaoDeInformacoes .inputPesquisar{
+    background-color: #f4f4f4;
+    border: none;
+    outline: none;
+    padding: 6px 4px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+
+}
+.secaoDeInformacoes .containerTabela{
+    padding: 0 10px ;
+}

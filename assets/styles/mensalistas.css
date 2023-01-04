@@ -1,0 +1,60 @@
+#mensalistas{
+    padding: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+#btnEditarMensalista{
+    font-size: 19px;
+    padding: 5px;
+    background-color: #006FE6;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;  
+    margin-left: 5px;
+}
+#btnExcluirMensalista{
+    font-size: 19px;
+    padding: 5px;
+    background-color: #F41E48;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer; 
+    margin-left: 5px;
+}
+.mensalistaAtivo{
+    background-color: #2DCE89;
+    color: white;
+    padding: 4px 0px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    width: 58px;
+}
+.mensalistaAtivo i{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3px;
+}
+.mensalistaInativo{
+    background-color: #FB6340;
+    color: white;
+    padding: 4px 0px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    width: 58px;
+}
+.mensalistaInativo i{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3px;
+
+
+}

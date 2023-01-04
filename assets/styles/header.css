@@ -1,0 +1,20 @@
+#header{
+    background-color: #272D36;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 30px;
+}
+#textoBoasVindas{
+    color: white;
+    font-size: 15px;
+    margin-right: 3px;
+}
+#btnAbrirMenuUsuario{
+    background-color: transparent;
+    border: none; 
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}

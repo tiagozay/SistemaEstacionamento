@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "javaScript",
+        "target": "ES6",    
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true
+    },
+    "include": ["typeScript/**/*"]
+}

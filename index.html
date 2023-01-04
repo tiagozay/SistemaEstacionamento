@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/menu.css">
+    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/padrao_tabelas.css">
+    <link rel="stylesheet" href="assets/styles/padrao_secaoDeInformacoes.css">
+    <link rel="stylesheet" href="assets/styles/home.css">
+    <link rel="stylesheet" href="assets/styles/estacionamento.css">
+    <link rel="stylesheet" href="assets/styles/mensalistas.css">
+    <link rel="stylesheet" href="assets/styles/mensalidades.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <section id="menu">
+        <div id="headerMenu">
+            <a href="#" id="linkRecarregar">
+                <img id="logoSistema" src="assets/icons/car.svg">
+                <span id="nomeSistema">Estacionamento</span>
+            </a>
+        </div>
+
+        <div id="opcoesMenu">
+            <div class="opcoesMenu__titulo">Menu</div>
+            <div class="opcaoMenu" data-pagina="home">
+                <i class="material-icons">home</i>
+                Home
+            </div>
+            <div class="opcaoMenu" data-pagina="estacionamento">
+                <i class="material-icons">local_parking</i>
+                Estacionamento
+            </div>
+            <div class="opcaoMenu" data-pagina="mensalistas">
+                <i class="material-icons">groups</i>
+                Mensalistas
+            </div>
+            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="mensalidades">
+                <i class="material-icons">payments</i>
+                Mensalidades
+            </div>
+            <div class="opcoesMenu__titulo">Administracao</div>
+            <div class="opcaoMenu" data-pagina="precificacoes">
+                <i class="material-icons">attach_money</i>
+                Precificações
+            </div>
+            <div class="opcaoMenu" data-pagina="formas_de_pagamento">
+                <i class="material-icons">credit_card</i>
+                Formas de pagamento
+            </div>
+            <div class="opcaoMenu" data-pagina="usuarios">
+                <i class="material-icons">group</i>
+                Usuários
+            </div>
+            <div class="opcaoMenu" data-pagina="sistema">
+                <i class="material-icons">settings</i>
+                Sistema
+            </div>
+        </div>
+
+    </section>
+    <section id="main">
+        <header id="header">
+            <p id="textoBoasVindas">Olá Tiago</p>
+            <button id="btnAbrirMenuUsuario" class="material-icons">person</button>
+        </header>
+
+        <section class="pagina-desativada" id="home">
+
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">directions_car</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Controle de estacionamento</h2>
+                    <span>Seja muito bem vindo(a) ao Sistema !</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section id="home__relatorios">
+                <div class="cardRelatorio" id="relatorioTotalDeVagas">
+                    <div class="cardIconeETitulo">
+                        <i class="material-icons">warehouse</i>
+                        <div class="tituloEValor">
+                            <p>Total de vagas</p>
+                            <p class="valorCard">120</p>
+                        </div>
+                    </div>
+
+                    <div class="cardInformacoes">
+                        <div class="cardInformacoes__primeiraInformacao">
+                            <span class="tituloInfo">Livre</span>
+                            <span class="valueInfo">117</span>
+                        </div>
+                        <i class="material-icons">sync_alt</i>
+                        <div class="cardInformacoes__segundaInformacao">
+                            <span class="tituloInfo">Ocupadas</span>
+                            <span class="valueInfo">3</span>
+                        </div>
+                    </div>
+
+                    <h6>Sistema</h6>
+                </div>
+                <div class="cardRelatorio" id="relatorioPagamentosMensais">
+                    <div class="cardIconeETitulo">
+                        <i class="material-icons">payments</i>
+                        <div class="tituloEValor">
+                            <p>Mensais</p>
+                            <p class="valorCard">R$ 12.900</p>
+                        </div>
+                    </div>
+
+                    <div class="cardInformacoes">
+                        <div class="cardInformacoes__primeiraInformacao">
+                            <span class="tituloInfo">Pagas</span>
+                            <span class="valueInfo">1</span>
+                        </div>
+                        <i class="material-icons">sync_alt</i>
+                        <div class="cardInformacoes__segundaInformacao">
+                            <span class="tituloInfo">Abertas</span>
+                            <span class="valueInfo">2</span>
+                        </div>
+                    </div>
+
+                    <h6>Sistema</h6>
+                </div>
+                <div class="cardRelatorio" id="relatorioPagamentosAvulsos">
+                    <div class="cardIconeETitulo">
+                        <i class="material-icons">attach_money</i>
+                        <div class="tituloEValor">
+                            <p>Avulsos</p>
+                            <p class="valorCard">R$ 67,233.65</p>
+                        </div>
+                    </div>
+
+                    <div class="cardInformacoes">
+                        <div class="cardInformacoes__primeiraInformacao">
+                            <span class="tituloInfo">Pagas</span>
+                            <span class="valueInfo">5</span>
+                        </div>
+                        <i class="material-icons">sync_alt</i>
+                        <div class="cardInformacoes__segundaInformacao">
+                            <span class="tituloInfo">Abertas</span>
+                            <span class="valueInfo">3</span>
+                        </div>
+                    </div>
+
+                    <h6>Sistema</h6>
+                </div>
+                <div class="cardRelatorio" id="relatorioMensalistas">
+                    <div class="cardIconeETitulo">
+                        <i class="material-icons">groups</i>
+                        <div class="tituloEValor">
+                            <p>Mensalistas</p>
+                            <p class="valorCard">120</p>
+                        </div>
+                    </div>
+
+                    <div class="cardInformacoes">
+                        <div class="cardInformacoes__primeiraInformacao">
+                            <span class="tituloInfo">Ativos</span>
+                            <span class="valueInfo">3</span>
+                        </div>
+                        <i class="material-icons">sync_alt</i>
+                        <div class="cardInformacoes__segundaInformacao">
+                            <span class="tituloInfo">Inativos</span>
+                            <span class="valueInfo">0</span>
+                        </div>
+                    </div>
+
+                    <h6>Sistema</h6>
+                </div>
+            </section>
+            
+        </section>
+
+        <section id="estacionamento" class="pagina-desativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">local_parking</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Tickets de estacionamento</h2>
+                    <span>Listando tickets cadastrados</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                    <button id="btnAdicionarNovo">
+                        <i class="material-icons">add</i>
+                        Novo
+                    </button>
+                </div>
+
+                <div class="divCamposSelectEBuscaDaTabela">
+                    <label>
+                        Somente tikets
+                        <select name="" class="selectFiltros">
+                            <option value="abertos">Abertos</option>
+                            <option value="fechados">Fechados</option>
+                            <option value="todos">Todos</option>
+                        </select>
+
+                    </label>
+             
+                    <label>
+                        Pesquisar
+                        <input type="text" class="inputPesquisar">
+                    </label>
+                </div>
+
+                <div class="containerTabela">
+                    <table id="tabelaTikets" class="tabelaPadrao">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                    </table>
+                </div>
+            
+
+            </section>
+
+        </section>
+
+        <section id="mensalistas" class="pagina-desativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">groups</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Mensalistas cadastrados</h2>
+                    <span>Listando todos os mensalistas cadastrados</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                    <button id="btnAdicionarNovo">
+                        <i class="material-icons">add</i>
+                        Novo
+                    </button>
+                </div>
+
+                <div class="divCamposSelectEBuscaDaTabela">
+                    <label>
+                        Somente mensalistas
+                        <select name="" class="selectFiltros">
+                            <option value="todos">Todos</option>
+                            <option value="abertos">Ativos</option>
+                            <option value="fechados">Inativos</option>
+                        </select>
+
+                    </label>
+             
+                    <label>
+                        Pesquisar
+                        <input type="text" class="inputPesquisar">
+                    </label>
+                </div>
+
+                <div class="containerTabela">
+                    <table id="tabelaMensalistas" class="tabelaPadrao">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                    </table>
+                </div>
+            
+
+            </section>
+
+        </section>
+
+        <section id="mensalidades" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">groups</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Mensalistas cadastrados</h2>
+                    <span>Listando todos os mensalistas cadastrados</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                    <button id="btnAdicionarNovo">
+                        <i class="material-icons">add</i>
+                        Novo
+                    </button>
+                </div>
+
+                <div class="divCamposSelectEBuscaDaTabela">
+                    <label>
+                        Somente tikets
+                        <select name="" class="selectFiltros">
+                            <option value="abertos">Abertos</option>
+                            <option value="fechados">Fechados</option>
+                            <option value="todos">Todos</option>
+                        </select>
+
+                    </label>
+             
+                    <label>
+                        Pesquisar
+                        <input type="text" class="inputPesquisar">
+                    </label>
+                </div>
+
+                <div class="containerTabela">
+                    <table id="tabelaMensalistas" class="tabelaPadrao">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                    </table>
+                </div>
+            
+
+            </section>
+
+
+        </section>
+
+        <section id="precificacoes" class="pagina-desativada">
+            precificacoes
+        </section>
+
+        <section id="formas_de_pagamento" class="pagina-desativada"> 
+            formas_de_pagamento
+        </section>
+
+        <section id="usuarios" class="pagina-desativada">
+            usuarios
+        </section>
+
+        <section id="sistema" class="pagina-desativada">
+            sistema
+        </section>
+
+    </section>
+
+    <script>
+
+        
+
+    </script>
+
+
+    <script type="module" src="javaScript/app.js"></script>
+</body>
+</html>
