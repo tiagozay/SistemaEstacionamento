@@ -10,7 +10,11 @@
 
 #tituloDaPagina{
     display: flex;
+    justify-content: space-between;
     margin-bottom: 30px;
+}
+#tituloDaPagina__nome{
+    display: flex;
 }
 #tituloDaPagina__icone{
     display: flex;
@@ -40,6 +44,25 @@
 #tituloDaPagina__textos span{
     font-size: 14px;
 }
+#caminhoDasEtapas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+#caminhoDasEtapas i{
+    font-size: 18px;
+    margin-right: 6px;
+    color: rgb(89, 89, 89);
+}
+#caminhoDasEtapas span{
+    margin-left: 6px;
+    margin-right: 15px;
+    color: rgb(61, 61, 61);
+    font-weight: 400;
+}
+
+
 #mensagemDeBoasVindas{
     background-color: #2DCE89;
     padding: 10px;
