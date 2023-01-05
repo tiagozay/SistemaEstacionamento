@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/styles/mensalidades.css">
     <link rel="stylesheet" href="assets/styles/precificacoes.css">
     <link rel="stylesheet" href="assets/styles/formasDePagamento.css">
+    <link rel="stylesheet" href="assets/styles/usuarios.css">
 
     <title>Document</title>
 </head>
@@ -56,11 +57,11 @@
                 <i class="material-icons">attach_money</i>
                 Precificações
             </div>
-            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="formas_de_pagamento">
+            <div class="opcaoMenu" data-pagina="formas_de_pagamento">
                 <i class="material-icons">credit_card</i>
                 Formas de pagamento
             </div>
-            <div class="opcaoMenu" data-pagina="usuarios">
+            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="usuarios">
                 <i class="material-icons">group</i>
                 Usuários
             </div>
@@ -423,14 +424,14 @@
 
         </section>
 
-        <section id="formas_de_pagamento" class="pagina-ativada"> 
+        <section id="formas_de_pagamento" class="pagina-desativada"> 
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__icone">
                     <i class="material-icons">attach_money</i>
                 </div>
                 <div id="tituloDaPagina__textos">
-                    <h2>Precificacoes cadastradas</h2>
-                    <span>Listando todos as Precificacoes cadastradas</span>
+                    <h2>Precificações cadastradas</h2>
+                    <span>Listando todos as Precificações cadastradas</span>
                 </div>
             </div>
 
@@ -479,8 +480,60 @@
             </section>
         </section>
 
-        <section id="usuarios" class="pagina-desativada">
-            usuarios
+        <section id="usuarios" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">group</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Usuários cadastrados</h2>
+                    <span>Listando todos os usuários cadastrados</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                    <button id="btnAdicionarNovo">
+                        <i class="material-icons">add</i>
+                        Novo
+                    </button>
+                </div>
+
+                <div class="divCamposSelectEBuscaDaTabela">
+                    <label>
+                        Somente usuários
+                        <select name="" class="selectFiltros">
+                            <option value="todos">Todos</option>
+                            <option value="administradores">Administradores</option>
+                            <option value="operadores">Operadores</option>
+                        </select>
+
+                    </label>
+             
+                    <label>
+                        Pesquisar
+                        <input type="text" class="inputPesquisar">
+                    </label>
+                </div>
+
+                <div class="containerTabela">
+                    <table id="tabelaUsuarios" class="tabelaPadrao">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                    </table>
+                </div>
+            
+
+            </section>
         </section>
 
         <section id="sistema" class="pagina-desativada">
