@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/styles/estacionamento.css">
     <link rel="stylesheet" href="assets/styles/mensalistas.css">
     <link rel="stylesheet" href="assets/styles/mensalidades.css">
+    <link rel="stylesheet" href="assets/styles/precificacoes.css">
 
     <title>Document</title>
 </head>
@@ -45,12 +46,12 @@
                 <i class="material-icons">groups</i>
                 Mensalistas
             </div>
-            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="mensalidades">
+            <div class="opcaoMenu" data-pagina="mensalidades">
                 <i class="material-icons">payments</i>
                 Mensalidades
             </div>
             <div class="opcoesMenu__titulo">Administracao</div>
-            <div class="opcaoMenu" data-pagina="precificacoes">
+            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="precificacoes">
                 <i class="material-icons">attach_money</i>
                 Precificações
             </div>
@@ -306,7 +307,7 @@
 
         </section>
 
-        <section id="mensalidades" class="pagina-ativada">
+        <section id="mensalidades" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__icone">
                     <i class="material-icons">groups</i>
@@ -364,8 +365,61 @@
 
         </section>
 
-        <section id="precificacoes" class="pagina-desativada">
-            precificacoes
+        <section id="precificacoes" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">attach_money</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Precificacoes cadastradas</h2>
+                    <span>Listando todos as Precificacoes cadastradas</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                    <button id="btnAdicionarNovo">
+                        <i class="material-icons">add</i>
+                        Novo
+                    </button>
+                </div>
+
+                <div class="divCamposSelectEBuscaDaTabela">
+                    <label>
+                        Somente mensalidades
+                        <select name="" class="selectFiltros">
+                            <option value="todos">Todas</option>
+                            <option value="abertos">Ativas</option>
+                            <option value="fechados">Vencidas</option>
+                        </select>
+
+                    </label>
+             
+                    <label>
+                        Pesquisar
+                        <input type="text" class="inputPesquisar">
+                    </label>
+                </div>
+
+                <div class="containerTabela">
+                    <table id="tabelaPrecificacoes" class="tabelaPadrao">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                    </table>
+                </div>
+            
+
+            </section>
+
         </section>
 
         <section id="formas_de_pagamento" class="pagina-desativada"> 

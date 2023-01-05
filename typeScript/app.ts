@@ -2,6 +2,7 @@ import {$, $all, createDomElement, elementosComAlturasIguais} from './lib/funcoe
 import { listarMensalistas } from './listagemMensalistas.js';
 import { listarTikets } from './listagemTikets.js';
 import { listarMensalidades } from './listagemMensalidades.js';
+import { listarPrecificacoes } from './listagemPrecificacoes.js';
 
 
 elementosComAlturasIguais($("#header") as HTMLElement, $("#headerMenu") as HTMLElement);
@@ -36,3 +37,4 @@ function trocarDePagina(event: Event)
 listarTikets();
 listarMensalistas();
 listarMensalidades();
+listarPrecificacoes();

@@ -1,42 +1,51 @@
-#estacionamento{
+#precificacoes{
     padding: 25px;
     font-family: 'Montserrat', sans-serif;
 }
-
-.statusPago{
+.precificacaoAtiva{
     background-color: #2DCE89;
     color: white;
-    padding: 7px 0px;
+    padding: 4px 0px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 11px;
+    width: 58px;
 }
-.statusEmAberto{
+.precificacaoAtiva i{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3px;
+}
+.precificacaoInativa{
     background-color: #FB6340;
     color: white;
-    padding: 7px 0px;
+    padding: 4px 0px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 11px;
-
+    width: 58px;
 }
-
-#btnImprimirTiket{
-    font-size: 18px;
+.precificacaoInativa i{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3px;
+}
+#btnEditarPrecificacao{
+    font-size: 19px;
     padding: 5px;
-    background-color: #1E2225;
+    background-color: #006FE6;
     outline: none;
     border: none;
     color: white;
     border-radius: 50%;
-    cursor: pointer;
+    cursor: pointer;  
     margin-left: 5px;
 }
-#btnExcluirTiket{
+#btnExcluirPrecificacao{
     font-size: 19px;
     padding: 5px;
     background-color: #F41E48;
@@ -45,27 +54,5 @@
     color: white;
     border-radius: 50%;
     cursor: pointer; 
-    margin-left: 5px;
-}
-#btnEditarTiket{
-    font-size: 19px;
-    padding: 5px;
-    background-color: #006FE6;
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;  
-    margin-left: 5px;
-}
-#btnVisualizarTiket{
-    font-size: 19px;
-    padding: 5px;
-    background-color: #006FE6;
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;  
     margin-left: 5px;
 }
