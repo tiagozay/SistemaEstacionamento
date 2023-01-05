@@ -31,16 +31,22 @@ export class CampoDosRegistros
     constructor(
         private _nomeDoCampo: string,
         private _campoNoObjeto: string,
+        private _geradorValorPersonalizado: ((value: string) => string) | null = null
     ){}
 
-    get nomeDoCampo()
+    get nomeDoCampo(): string
     {
         return this._nomeDoCampo;
     }
 
-    get campoNoObjeto()
+    get campoNoObjeto(): string
     {
         return this._campoNoObjeto;
+    }
+
+    get geradorValorPersonalizado(): ((value: string) => string) | null
+    {
+        return this._geradorValorPersonalizado;
     }
 }
 
@@ -334,10 +340,14 @@ export class ZayDataTable
                         }
                     }
 
-                    
-
                 }else{
-                    td.textContent = objeto[campo_no_objeto as keyof object];
+
+                    if(campo.geradorValorPersonalizado){
+                        td.innerHTML = campo.geradorValorPersonalizado(objeto[campo_no_objeto as keyof object]);
+                    }else{
+                        td.textContent = objeto[campo_no_objeto as keyof object];
+                    }
+      
                 }
 
                 tr.appendChild(td);

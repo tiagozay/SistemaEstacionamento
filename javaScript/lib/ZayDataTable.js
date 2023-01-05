@@ -17,15 +17,19 @@ export class AcaoDiferenteParaCadaRegistro {
     }
 }
 export class CampoDosRegistros {
-    constructor(_nomeDoCampo, _campoNoObjeto) {
+    constructor(_nomeDoCampo, _campoNoObjeto, _geradorValorPersonalizado = null) {
         this._nomeDoCampo = _nomeDoCampo;
         this._campoNoObjeto = _campoNoObjeto;
+        this._geradorValorPersonalizado = _geradorValorPersonalizado;
     }
     get nomeDoCampo() {
         return this._nomeDoCampo;
     }
     get campoNoObjeto() {
         return this._campoNoObjeto;
+    }
+    get geradorValorPersonalizado() {
+        return this._geradorValorPersonalizado;
     }
 }
 export class ZayDataTable {
@@ -104,7 +108,12 @@ export class ZayDataTable {
                         }
                     }
                     else {
-                        td.textContent = objeto[campo_no_objeto];
+                        if (campo.geradorValorPersonalizado) {
+                            td.innerHTML = campo.geradorValorPersonalizado(objeto[campo_no_objeto]);
+                        }
+                        else {
+                            td.textContent = objeto[campo_no_objeto];
+                        }
                     }
                     tr.appendChild(td);
                 });

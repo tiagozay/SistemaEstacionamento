@@ -37,38 +37,28 @@ export function listarPrecificacoes() {
         new CampoDosRegistros("Valor da hora", 'valorDaHora'),
         new CampoDosRegistros("Valor da mensalidade", 'valorDaMensalidade'),
         new CampoDosRegistros("Numero de vagas", 'numeroDeVagas'),
-        new CampoDosRegistros("Ativa", 'ativa'),
+        new CampoDosRegistros("Ativa", 'ativa', (ativa) => {
+            if (ativa == "Sim") {
+                return `
+                        <p class="p_textoAtivo">
+                            <i class="material-icons">lock_open</i>
+                            Sim
+                        </p>
+                    `;
+            }
+            else if (ativa == "Não") {
+                return `
+                        <p class="p_textoInativo">
+                            <i class="material-icons">lock</i>
+                            Não
+                        </p>
+                    
+                    `;
+            }
+            return ativa;
+        }),
     ], 'id', dados, [
         new AcaoRegistro(btnEditarPrecificacao, () => { }),
         new AcaoRegistro(btnExcluirPrecificacao, () => { }),
     ], null, 5);
-    formataAtivoDeAcordoComValor();
-    zayDataTable__precificacoes.onWriteRegisters = () => {
-        formataAtivoDeAcordoComValor();
-    };
-}
-function formataAtivoDeAcordoComValor() {
-    const tdsAtivo = document.querySelectorAll(`.${nomeTabela}-ativa`);
-    tdsAtivo.forEach(td => {
-        if (td.innerText == 'Sim') {
-            const p = document.createElement("p");
-            p.innerHTML = `
-                <i class="material-icons">lock_open</i>
-                ${td.innerText}
-            `;
-            td.innerHTML = "";
-            td.appendChild(p);
-            p.classList.add("precificacaoAtiva");
-        }
-        else if (td.innerText == 'Não') {
-            const p = document.createElement("p");
-            p.innerHTML = `
-                <i class="material-icons">lock</i>
-                ${td.innerText}
-            `;
-            td.innerHTML = "";
-            td.appendChild(p);
-            p.classList.add("precificacaoInativa");
-        }
-    });
 }

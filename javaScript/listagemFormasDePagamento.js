@@ -20,7 +20,8 @@ class FormaDePagamento {
 const formasDePagamento = [
     new FormaDePagamento('1', 'Dinheiro', true),
     new FormaDePagamento('2', 'Crédito', true),
-    new FormaDePagamento('3', 'Débito', true)
+    new FormaDePagamento('3', 'Débito', true),
+    new FormaDePagamento('4', 'Grátis', false),
 ];
 const btnEditarFormaDePagamento = createDomElement("button", "btnEditarFormaDePagamento", 'edit', 'material-icons');
 const btnExcluirFormaDePagamento = createDomElement("button", "btnExcluirFormaDePagamento", 'delete', 'material-icons');
@@ -29,7 +30,26 @@ export function listarFormasDePagamento() {
     const dados = FormaDePagamento.formataFormasDePagamentoParaListar(formasDePagamento);
     const zayDataTable__formasDePagamento = new ZayDataTable(nomeTabela, $("#tabelaFormasDePagamento"), [
         new CampoDosRegistros('Nome forma de pagamento', 'nome'),
-        new CampoDosRegistros('Ativa', 'ativa'),
+        new CampoDosRegistros('Ativa', 'ativa', (ativa) => {
+            if (ativa == "Sim") {
+                return `
+                        <p class="p_textoAtivo">
+                            <i class="material-icons">lock_open</i>
+                            Sim
+                        </p>
+                    `;
+            }
+            else if (ativa == "Não") {
+                return `
+                        <p class="p_textoInativo">
+                            <i class="material-icons">lock</i>
+                            Não
+                        </p>
+                    
+                    `;
+            }
+            return ativa;
+        }),
     ], 'id', dados, [
         new AcaoRegistro(btnEditarFormaDePagamento, () => { }),
         new AcaoRegistro(btnExcluirFormaDePagamento, () => { })

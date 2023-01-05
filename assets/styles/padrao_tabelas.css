@@ -69,3 +69,35 @@
 .zayDataTable__btn_paginacao_desativado{
     color: rgb(203, 203, 203);
 }
+.p_textoAtivo{
+    background-color: #2DCE89;
+    color: white;
+    padding: 4px 0px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    width: 58px;
+}
+.p_textoAtivo i{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3px;
+}
+.p_textoInativo{
+    background-color: #FB6340;
+    color: white;
+    padding: 4px 0px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    width: 58px;
+}
+.p_textoInativo i{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 3px;
+}

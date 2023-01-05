@@ -2,38 +2,6 @@
     padding: 25px;
     font-family: 'Montserrat', sans-serif;
 }
-.precificacaoAtiva{
-    background-color: #2DCE89;
-    color: white;
-    padding: 4px 0px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 11px;
-    width: 58px;
-}
-.precificacaoAtiva i{
-    font-size: 15px;
-    font-weight: 600;
-    margin-right: 3px;
-}
-.precificacaoInativa{
-    background-color: #FB6340;
-    color: white;
-    padding: 4px 0px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 11px;
-    width: 58px;
-}
-.precificacaoInativa i{
-    font-size: 15px;
-    font-weight: 600;
-    margin-right: 3px;
-}
 #btnEditarPrecificacao{
     font-size: 19px;
     padding: 5px;

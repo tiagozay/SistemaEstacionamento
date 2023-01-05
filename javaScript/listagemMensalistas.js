@@ -47,38 +47,28 @@ export function listarMensalistas() {
         new CampoDosRegistros('CPF', 'cpf'),
         new CampoDosRegistros('E-mail', 'email'),
         new CampoDosRegistros('Celular', 'celular'),
-        new CampoDosRegistros('Ativo', 'ativo'),
+        new CampoDosRegistros('Ativo', 'ativo', (ativo) => {
+            if (ativo == "Sim") {
+                return `
+                        <p class="p_textoAtivo">
+                            <i class="material-icons">lock_open</i>
+                            Sim
+                        </p>
+                    `;
+            }
+            else if (ativo == "Não") {
+                return `
+                        <p class="p_textoInativo">
+                            <i class="material-icons">lock</i>
+                            Não
+                        </p>
+                    
+                    `;
+            }
+            return ativo;
+        }),
     ], 'id', dados, [
         new AcaoRegistro(btnEditarMensalista, () => { }),
         new AcaoRegistro(btnExcluirMensalista, () => { }),
     ], null, 5);
-    formataAtivoDeAcordoComValor();
-    zayDataTable__mensalistas.onWriteRegisters = () => {
-        formataAtivoDeAcordoComValor();
-    };
-}
-function formataAtivoDeAcordoComValor() {
-    const tdsAtivo = document.querySelectorAll(`.${nomeTabela}-ativo`);
-    tdsAtivo.forEach(td => {
-        if (td.innerText == 'Sim') {
-            const p = document.createElement("p");
-            p.innerHTML = `
-                <i class="material-icons">lock_open</i>
-                ${td.innerText}
-            `;
-            td.innerHTML = "";
-            td.appendChild(p);
-            p.classList.add("mensalistaAtivo");
-        }
-        else if (td.innerText == 'Não') {
-            const p = document.createElement("p");
-            p.innerHTML = `
-                <i class="material-icons">lock</i>
-                ${td.innerText}
-            `;
-            td.innerHTML = "";
-            td.appendChild(p);
-            p.classList.add("mensalistaInativo");
-        }
-    });
 }
