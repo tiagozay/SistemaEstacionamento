@@ -56,3 +56,12 @@ export function formata_data_sem_horario(string) {
     string = string.replace('-', '/');
     return string;
 }
+export function formata_telefone(telefone) {
+    let ddd = telefone.substring(0, 2);
+    let primeiros5digitos = telefone.substring(2, 7);
+    let ultimos4digitos = telefone.substring(7);
+    return `(${ddd}) ${primeiros5digitos}-${ultimos4digitos}`;
+}
+export function remove_formatacao_telefone(telefone) {
+    return telefone.replace(/[()\s-]/g, '');
+}

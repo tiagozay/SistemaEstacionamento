@@ -1,4 +1,4 @@
-import { $, createDomElement, formata_cpf } from "./lib/funcoesUtilitarias.js";
+import { $, createDomElement, formata_cpf, formata_telefone } from "./lib/funcoesUtilitarias.js";
 import { AcaoRegistro, CampoDosRegistros, ZayDataTable } from "./lib/ZayDataTable.js";
 export class Mensalista {
     constructor(id, nome, cpf, email, celular, ativo) {
@@ -15,7 +15,7 @@ export class Mensalista {
             nome: this.nome,
             cpf: formata_cpf(this.cpf),
             email: this.email,
-            celular: this.celular,
+            celular: formata_telefone(this.celular),
             ativo: this.ativo ? 'Sim' : 'Não'
         };
     }
@@ -24,17 +24,17 @@ export class Mensalista {
     }
 }
 const mensalistas = [
-    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', false),
+    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999567084', false),
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', true),
-    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', true),
+    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999567084', true),
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', true),
-    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', false),
+    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999567084', false),
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', true),
-    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', true),
+    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999567084', true),
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', true),
-    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', true),
+    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999567084', true),
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', false),
-    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', true),
+    new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999567084', true),
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', true),
 ];
 const btnEditarMensalista = createDomElement("button", "btnEditarMensalista", 'edit', 'material-icons');
