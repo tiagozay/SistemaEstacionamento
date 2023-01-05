@@ -36,28 +36,6 @@
     cursor: pointer;
     margin-left: 5px;
 }
-#btnExcluirTiket{
-    font-size: 19px;
-    padding: 5px;
-    background-color: #F41E48;
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer; 
-    margin-left: 5px;
-}
-#btnEditarTiket{
-    font-size: 19px;
-    padding: 5px;
-    background-color: #006FE6;
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;  
-    margin-left: 5px;
-}
 #btnVisualizarTiket{
     font-size: 19px;
     padding: 5px;

@@ -51,8 +51,8 @@ const dados = Tiket.formataTiketsParaListar(tikets);
 const nomeTabela = 'listagemTikets';
 const btnImprimirTiket = createDomElement('button', 'btnImprimirTiket', 'print', 'material-icons');
 const btnVisualizarTiket = createDomElement('button', 'btnVisualizarTiket', 'visibility', 'material-icons');
-const btnEditarTiket = createDomElement('button', 'btnEditarTiket', 'edit', 'material-icons');
-const btnExcluirTiket = createDomElement('button', 'btnExcluirTiket', 'delete', 'material-icons');
+const btnEditarTiket = createDomElement('button', null, 'edit', 'material-icons', 'tabela__btnEditar');
+const btnExcluirTiket = createDomElement('button', null, 'delete', 'material-icons', 'tabela__btnExcluir');
 export function listarTikets() {
     const zayDataTable_tikets = new ZayDataTable(nomeTabela, $("#tabelaTikets"), [
         new CampoDosRegistros("Segmento", 'segmento'),

@@ -27,8 +27,8 @@ const categorias = [
     new Categoria('1', 'Carro', 15, 150, 33, true),
     new Categoria('2', 'Moto', 10, 120, 25, true),
 ];
-const btnEditarPrecificacao = createDomElement("button", "btnEditarPrecificacao", 'edit', 'material-icons');
-const btnExcluirPrecificacao = createDomElement("button", "btnExcluirPrecificacao", 'delete', 'material-icons');
+const btnEditarPrecificacao = createDomElement("button", null, 'edit', 'material-icons', 'tabela__btnEditar');
+const btnExcluirPrecificacao = createDomElement("button", null, 'delete', 'material-icons', 'tabela__btnExcluir');
 const nomeTabela = 'listagemPrecificacoes';
 export function listarPrecificacoes() {
     const dados = Categoria.formataCategoriasParaListar(categorias);

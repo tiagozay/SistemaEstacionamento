@@ -101,3 +101,25 @@
     font-weight: 600;
     margin-right: 3px;
 }
+.tabela__btnEditar{
+    font-size: 19px;
+    padding: 5px;
+    background-color: #006FE6;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;  
+    margin-left: 5px;
+}
+.tabela__btnExcluir{
+    font-size: 19px;
+    padding: 5px;
+    background-color: #F41E48;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer; 
+    margin-left: 5px;
+}

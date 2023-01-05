@@ -23,8 +23,8 @@ const formasDePagamento = [
     new FormaDePagamento('3', 'Débito', true),
     new FormaDePagamento('4', 'Grátis', false),
 ];
-const btnEditarFormaDePagamento = createDomElement("button", "btnEditarFormaDePagamento", 'edit', 'material-icons');
-const btnExcluirFormaDePagamento = createDomElement("button", "btnExcluirFormaDePagamento", 'delete', 'material-icons');
+const btnEditarFormaDePagamento = createDomElement("button", null, 'edit', 'material-icons', 'tabela__btnEditar');
+const btnExcluirFormaDePagamento = createDomElement("button", null, 'delete', 'material-icons', 'tabela__btnExcluir');
 const nomeTabela = 'listagemFormasDePagamento';
 export function listarFormasDePagamento() {
     const dados = FormaDePagamento.formataFormasDePagamentoParaListar(formasDePagamento);

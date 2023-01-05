@@ -46,7 +46,7 @@ const mensalidades = [
     new Mensalidade('1', new Mensalista('1', "José", '11111111111', 'jose@gmail.com', '42999999999', false), 'Moto', 130.00, "Dinheiro",  new Date('2023-01-04T03:24:00'), new Date('2023-02-04T03:24:00'),  'Vencido'),
 ];
 
-const btnExcluirMensalidade = createDomElement("button", "btnExcluirMensalidade", 'delete', 'material-icons');
+const btnExcluirMensalidade = createDomElement("button", null, 'delete', 'material-icons', 'tabela__btnExcluir');
 
 const nomeTabela = 'listagemMensalidades';
 

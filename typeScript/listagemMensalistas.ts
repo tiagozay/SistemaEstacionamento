@@ -45,8 +45,8 @@ const mensalistas = [
     new Mensalista('2', "Tiago zay", '13202597906', 'tiagozat@gmail.com', '42999318075', true),
 ]
 
-const btnEditarMensalista = createDomElement("button", "btnEditarMensalista", 'edit', 'material-icons');
-const btnExcluirMensalista = createDomElement("button", "btnExcluirMensalista", 'delete', 'material-icons');
+const btnEditarMensalista = createDomElement("button", null, 'edit', 'material-icons', 'tabela__btnEditar');
+const btnExcluirMensalista = createDomElement("button", null, 'delete', 'material-icons', 'tabela__btnExcluir');
 
 const nomeTabela = 'listagemMensalistas';
 
