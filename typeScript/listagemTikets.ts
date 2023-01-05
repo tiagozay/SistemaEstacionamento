@@ -17,7 +17,7 @@ class Tiket
         return {
             id: this.id,
             segmento: this.segmento,
-            valor_hora: this.valor_hora,
+            valor_hora: this.valor_hora.toLocaleString('pt-BR', {style: "currency", currency: "BRL"}),
             placa: this.veiculo.placa,
             veiculo: this.veiculo.marca+" "+this.veiculo.modelo,
             forma_de_pagamento: this.forma_de_pagamento,
