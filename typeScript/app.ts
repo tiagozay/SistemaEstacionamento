@@ -3,6 +3,7 @@ import { listarMensalistas } from './listagemMensalistas.js';
 import { listarTikets } from './listagemTikets.js';
 import { listarMensalidades } from './listagemMensalidades.js';
 import { listarPrecificacoes } from './listagemPrecificacoes.js';
+import { listarFormasDePagamento } from './listagemFormasDePagamento.js';
 
 
 elementosComAlturasIguais($("#header") as HTMLElement, $("#headerMenu") as HTMLElement);
@@ -38,3 +39,4 @@ listarTikets();
 listarMensalistas();
 listarMensalidades();
 listarPrecificacoes();
+listarFormasDePagamento();

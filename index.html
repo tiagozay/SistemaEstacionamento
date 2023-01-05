@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/styles/mensalistas.css">
     <link rel="stylesheet" href="assets/styles/mensalidades.css">
     <link rel="stylesheet" href="assets/styles/precificacoes.css">
+    <link rel="stylesheet" href="assets/styles/formasDePagamento.css">
 
     <title>Document</title>
 </head>
@@ -51,11 +52,11 @@
                 Mensalidades
             </div>
             <div class="opcoesMenu__titulo">Administracao</div>
-            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="precificacoes">
+            <div class="opcaoMenu" data-pagina="precificacoes">
                 <i class="material-icons">attach_money</i>
                 Precificações
             </div>
-            <div class="opcaoMenu" data-pagina="formas_de_pagamento">
+            <div class="opcaoMenu opcaoMenuSelecionado" data-pagina="formas_de_pagamento">
                 <i class="material-icons">credit_card</i>
                 Formas de pagamento
             </div>
@@ -365,7 +366,7 @@
 
         </section>
 
-        <section id="precificacoes" class="pagina-ativada">
+        <section id="precificacoes" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__icone">
                     <i class="material-icons">attach_money</i>
@@ -422,8 +423,60 @@
 
         </section>
 
-        <section id="formas_de_pagamento" class="pagina-desativada"> 
-            formas_de_pagamento
+        <section id="formas_de_pagamento" class="pagina-ativada"> 
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__icone">
+                    <i class="material-icons">attach_money</i>
+                </div>
+                <div id="tituloDaPagina__textos">
+                    <h2>Precificacoes cadastradas</h2>
+                    <span>Listando todos as Precificacoes cadastradas</span>
+                </div>
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                    <button id="btnAdicionarNovo">
+                        <i class="material-icons">add</i>
+                        Novo
+                    </button>
+                </div>
+
+                <div class="divCamposSelectEBuscaDaTabela">
+                    <label>
+                        Somente mensalidades
+                        <select name="" class="selectFiltros">
+                            <option value="todos">Todas</option>
+                            <option value="abertos">Ativas</option>
+                            <option value="fechados">Vencidas</option>
+                        </select>
+
+                    </label>
+             
+                    <label>
+                        Pesquisar
+                        <input type="text" class="inputPesquisar">
+                    </label>
+                </div>
+
+                <div class="containerTabela">
+                    <table id="tabelaFormasDePagamento" class="tabelaPadrao">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                    </table>
+                </div>
+            
+
+            </section>
         </section>
 
         <section id="usuarios" class="pagina-desativada">

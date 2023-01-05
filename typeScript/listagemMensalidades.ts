@@ -1,5 +1,5 @@
 import { DateHelper } from "./helpers/DateHelper.js";
-import { $, createDomElement, formata_cpf, formata_data } from "./lib/funcoesUtilitarias.js";
+import { $, createDomElement, formata_cpf } from "./lib/funcoesUtilitarias.js";
 import { AcaoRegistro, CampoDosRegistros, ZayDataTable } from "./lib/ZayDataTable.js";
 import { Mensalista } from "./listagemMensalistas.js";
 

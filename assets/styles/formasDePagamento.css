@@ -1,0 +1,26 @@
+#formas_de_pagamento{
+    padding: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+#btnEditarFormaDePagamento{
+    font-size: 19px;
+    padding: 5px;
+    background-color: #006FE6;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;  
+    margin-left: 5px;
+}
+#btnExcluirFormaDePagamento{
+    font-size: 19px;
+    padding: 5px;
+    background-color: #F41E48;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer; 
+    margin-left: 5px;
+}
