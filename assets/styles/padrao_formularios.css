@@ -1,0 +1,61 @@
+.formPadrao{
+    padding: 20px;
+}
+.formPadrao__divSalvarECancelar{
+    margin-top: 15px;
+    display: flex;
+}
+.linha3Inputs{
+    display: flex;
+    padding: 15px 0;
+    justify-content: space-between;
+}
+.linha3Inputs label{
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    font-size: 13px;
+}
+.linha3Inputs input, select{
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px #eaeaea solid;
+    height: 33px;
+    border-radius: 4px;
+    margin-top: 7px;
+    color: rgb(55, 55, 55);
+}
+.inputDesativado{
+    background-color: rgb(235, 235, 235);
+}
+.formPadrao__btnSalvar{
+    background-color: #006FE6;
+    color: white;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 7px 14px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formPadrao__btnSalvar i{
+    font-size: 18px;
+    margin-right: 3px;
+}
+.formPadrao__btnVoltar{
+    background-color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
