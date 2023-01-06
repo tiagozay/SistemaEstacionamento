@@ -65,10 +65,12 @@ function ativaBtnMenuDeAcordoComPagina(idPaginaAtivada: string)
         return;
     }
 
-    const btnAtivado = $('.opcaoMenuSelecionado') as HTMLElement;
+    const btnAtivado = $('.opcaoMenuSelecionado');
 
-    btnAtivado.classList.remove('opcaoMenuSelecionado');
-
+    if(btnAtivado){
+        btnAtivado.classList.remove('opcaoMenuSelecionado');
+    }
+ 
     const btnMenu = $(`[data-pagina=${idPaginaAtivada}]`) as HTMLElement;
 
     btnMenu.classList.add("opcaoMenuSelecionado");

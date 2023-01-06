@@ -44,7 +44,9 @@ function ativaBtnMenuDeAcordoComPagina(idPaginaAtivada) {
         return;
     }
     const btnAtivado = $('.opcaoMenuSelecionado');
-    btnAtivado.classList.remove('opcaoMenuSelecionado');
+    if (btnAtivado) {
+        btnAtivado.classList.remove('opcaoMenuSelecionado');
+    }
     const btnMenu = $(`[data-pagina=${idPaginaAtivada}]`);
     btnMenu.classList.add("opcaoMenuSelecionado");
 }

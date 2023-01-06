@@ -20,6 +20,8 @@
     background-color: #19B5FE;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
 }
 .secaoDeInformacoes #btnAdicionarNovo i{
     font-size: 12px;

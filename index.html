@@ -62,7 +62,7 @@
                 <i class="material-icons">credit_card</i>
                 Formas de pagamento
             </div>
-            <div class="opcaoMenu btnTrocarDePaginaMenu opcaoMenuSelecionado" data-pagina="usuarios">
+            <div class="opcaoMenu btnTrocarDePaginaMenu" data-pagina="usuarios">
                 <i class="material-icons">group</i>
                 Usuários
             </div>
@@ -229,10 +229,10 @@
 
             <section class="secaoDeInformacoes">
                 <div id="divBtnNovo">
-                    <div class="btnTrocarDePagina" id="btnAdicionarNovo" data-pagina="formularioAdcNovoTiket">
+                    <button class="btnTrocarDePagina" id="btnAdicionarNovo" data-pagina="formularioAdcNovoTiket">
                         <i class="material-icons">add</i>
                         Novo
-                    </div>
+                    </button>
                 </div>
 
                 <div class="divCamposSelectEBuscaDaTabela">
@@ -521,7 +521,7 @@
             </section>
         </section>
 
-        <section id="usuarios" class="pagina-ativada">
+        <section id="usuarios" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -591,7 +591,7 @@
 
         <!-- FORMULÁRIOS -->
 
-        <section id="formularioAdcNovoTiket" class="pagina-desativada">
+        <section id="formularioAdcNovoTiket" class="pagina-ativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -622,37 +622,66 @@
 
             <section class="secaoDeInformacoes">
                 <div id="divBtnNovo">
-                    <button class="btnTrocarDePagina" id="btnAdicionarNovo" data-pagina="formularioAdcNovoTiket">
-                        <i class="material-icons">add</i>
-                        Novo
-                    </button>
                 </div>
 
-                <div class="divCamposSelectEBuscaDaTabela">
-                    <label>
-                        Somente tikets
-                        <select name="" class="selectFiltros">
-                            <option value="abertos">Abertos</option>
-                            <option value="fechados">Fechados</option>
-                            <option value="todos">Todos</option>
-                        </select>
+                <form action="" id="formAdicionarNovoTiket">
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Placa veículo
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Marca veículo
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Modelo veículo
+                            <input type="text">
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Categoria
+                            <select name="" id="">
+                                <option value="">Moto</option>
+                                <option value="">Carro</option>
+                            </select>
+                        </label>
+                        <label for="">
+                            Valor hora
+                            <input type="text" class="inputDesativado" readonly> 
+                        </label>
+                        <label for="">
+                            Número vaga
+                            <input type="text">
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Data entrada
+                            <input type="text" class="inputDesativado" readonly>
+                        </label>
+                        <label for="">
+                            Data saída
+                            <input type="text" class="inputDesativado" readonly>
+                        </label>
+                        <label for="">
+                            Tempo decorrido (horas e minutos)
+                            <input type="text" class="inputDesativado" readonly>
+                        </label>
+                    </div>
 
-                    </label>
-             
-                    <label>
-                        Pesquisar
-                        <input type="text" class="inputPesquisar">
-                    </label>
-                </div>
-
-                <div class="containerTabela">
-                    <table id="tabelaTikets" class="tabelaPadrao">
-                        <thead>
-                            <tr></tr>
-                        </thead>
-                    </table>
-                </div>
-            
+                    <div id="divBtnSalvarECancelarTiket">
+                        <button id="btnSalvarTiket">
+                            <i class="material-icons">save</i>
+                            Salvar
+                        </button>
+                        <button type="button" class="btnTrocarDePagina" id="btnVoltarTiket" data-pagina="estacionamento">Voltar</button>
+                    </div>
+                </form>
+               
 
             </section>
         </section>
