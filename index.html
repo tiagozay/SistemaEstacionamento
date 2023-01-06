@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/styles/formasDePagamento.css">
     <link rel="stylesheet" href="assets/styles/usuarios.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarTiket.css">
+    <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalista.css">
 
     <title>Document</title>
 </head>
@@ -293,7 +294,7 @@
 
             <section class="secaoDeInformacoes">
                 <div id="divBtnNovo">
-                    <button id="btnAdicionarNovo">
+                    <button class="btnTrocarDePagina" id="btnAdicionarNovo" data-pagina="formAdicionarMensalista">
                         <i class="material-icons">add</i>
                         Novo
                     </button>
@@ -591,7 +592,7 @@
 
         <!-- FORMULÁRIOS -->
 
-        <section id="formularioAdcNovoTiket" class="pagina-ativada">
+        <section id="formularioAdcNovoTiket" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -684,7 +685,105 @@
                
 
             </section>
+            
         </section>
+
+
+        <section id="formAdicionarMensalista" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__nome">
+                    <div id="tituloDaPagina__icone">
+                        <i class="material-icons">groups</i>
+                    </div>
+                    <div id="tituloDaPagina__textos">
+                        <h2>Cadastrar mensalistas</h2>
+                        <span>Cadastrando mensalistas</span>
+                    </div>
+                </div>
+                <div id="caminhoDasEtapas">
+                    <a class="btnTrocarDePagina" data-pagina="home"><i class="material-icons">home</i></a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="btnTrocarDePagina infoPagina" data-pagina="mensalistas">Mensalistas</a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="infoPagina">Cadastrar mensalista</a>
+                </div>
+             
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                </div>
+
+                <form action="" id="formAdicionarNovoTiket">
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Nome
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Sobrenome
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Data nascimento
+                            <input type="date">
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            CPF
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            E-mail
+                            <input type="text"> 
+                        </label>
+                        <label for="">
+                            Telefone
+                            <input type="text">
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Endereço
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Cidade
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Data de contratação
+                            <input type="text" class="inputDesativado" readonly>
+                        </label>
+                    </div>
+
+                    <div id="divBtnSalvarECancelarTiket">
+                        <button id="btnSalvarTiket">
+                            <i class="material-icons">save</i>
+                            Salvar
+                        </button>
+                        <button type="button" class="btnTrocarDePagina" id="btnVoltarTiket" data-pagina="mensalistas">Voltar</button>
+                    </div>
+                </form>
+               
+
+            </section>
+            
+        </section>
+
+
+        
 
     </section>
 
@@ -694,7 +793,7 @@
 
     </script>
 
-
+formCadastrarMensalista
     <script type="module" src="javaScript/app.js"></script>
 </body>
 </html>
