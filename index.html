@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/styles/usuarios.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarTiket.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalista.css">
+    <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalidade.css">
 
     <title>Document</title>
 </head>
@@ -358,7 +359,7 @@
 
             <section class="secaoDeInformacoes">
                 <div id="divBtnNovo">
-                    <button id="btnAdicionarNovo">
+                    <button class="btnTrocarDePagina" data-pagina="formularioCadastroNovaMensalidade" id="btnAdicionarNovo">
                         <i class="material-icons">add</i>
                         Novo
                     </button>
@@ -689,7 +690,7 @@
         </section>
 
 
-        <section id="formAdicionarMensalista" class="pagina-ativada">
+        <section id="formAdicionarMensalista" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -763,8 +764,96 @@
                             <input type="text">
                         </label>
                         <label for="">
-                            Data de contratação
+                            CEP
+                            <input type="text">
+                        </label>
+                    </div>
+
+                    <div id="divBtnSalvarECancelarTiket">
+                        <button id="btnSalvarTiket">
+                            <i class="material-icons">save</i>
+                            Salvar
+                        </button>
+                        <button type="button" class="btnTrocarDePagina" id="btnVoltarTiket" data-pagina="mensalistas">Voltar</button>
+                    </div>
+                </form>
+               
+
+            </section>
+            
+        </section>
+
+        <section id="formularioCadastroNovaMensalidade" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__nome">
+                    <div id="tituloDaPagina__icone">
+                        <i class="material-icons">payments</i>
+                    </div>
+                    <div id="tituloDaPagina__textos">
+                        <h2>Cadastrar mensalidade</h2>
+                        <span>Cadastrando mensalidades</span>
+                    </div>
+                </div>
+                <div id="caminhoDasEtapas">
+                    <a class="btnTrocarDePagina" data-pagina="home"><i class="material-icons">home</i></a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="btnTrocarDePagina infoPagina" data-pagina="mensalidades">Mensalidades</a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="infoPagina">Cadastrar mensalidade</a>
+                </div>
+             
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                </div>
+
+                <form action="" id="formAdicionarNovoTiket">
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Mensalista
+                            <select name="" id="">
+                                <option value="">José</option>
+                                <option value="">Pedro</option>
+                            </select>
+                        </label>
+                        <label for="">
+                            Categoria
+                            <select name="" id="">
+                                <option value="">Moto</option>
+                                <option value="">Carro</option>
+                            </select>
+                        </label>
+                        <label for="">
+                            Valor mensalidade
                             <input type="text" class="inputDesativado" readonly>
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Data de contratação
+                            <input type="date" class="inputDesativado" readonly>
+                        </label>
+                        <label for="">
+                            Data de vencimento
+                            <input type="date" class="inputDesativado" readonly>
+                        </label>
+                        <label for="">
+                            Forma de pagamento
+                            <select name="" id="">
+                                <option value="">Dinheiro</option>
+                                <option value="">Crédito</option>
+                                <option value="">Débito</option>
+                            </select>
                         </label>
                     </div>
 
@@ -793,7 +882,7 @@
 
     </script>
 
-formCadastrarMensalista
+
     <script type="module" src="javaScript/app.js"></script>
 </body>
 </html>
