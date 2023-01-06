@@ -55,3 +55,4 @@ export function listarFormasDePagamento() {
         new AcaoRegistro(btnExcluirFormaDePagamento, () => { })
     ], null, 5);
 }
+//# sourceMappingURL=listagemFormasDePagamento.js.map

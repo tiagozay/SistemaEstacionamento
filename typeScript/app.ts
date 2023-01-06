@@ -9,16 +9,26 @@ import { listarUsuarios } from './listagemUsuarios.js';
 
 elementosComAlturasIguais($("#header") as HTMLElement, $("#headerMenu") as HTMLElement);
 
-const btnsDeTrocarDePagina = $all('.opcaoMenu');
-btnsDeTrocarDePagina.forEach( btn => btn.addEventListener('click', trocarDePagina) );
+const btnsDeTrocarDePaginaMenu = $all('.btnTrocarDePaginaMenu');
+btnsDeTrocarDePaginaMenu.forEach( btn => btn.addEventListener('click', trocarDePaginaMenu) );
 
-function trocarDePagina(event: Event)
+const btnTrocarDePagina = $all(".btnTrocarDePagina");
+btnTrocarDePagina.forEach( btn => btn.addEventListener('click', (event) => {
+
+    let target = event.target as HTMLElement;
+
+    if(target.classList.contains('material-icons')){
+        target = target.parentNode as HTMLElement;
+    }
+
+    mudarParaAPagina(target.dataset.pagina as string);
+
+}) );
+
+
+function trocarDePaginaMenu(event: Event)
 {
-    const paginaAtivada = $('.pagina-ativada') as HTMLElement;
     const btnAtivado = $('.opcaoMenuSelecionado') as HTMLElement;
-
-    paginaAtivada.classList.remove('pagina-ativada');
-    paginaAtivada.classList.add('pagina-desativada');
 
     btnAtivado.classList.remove('opcaoMenuSelecionado');
 
@@ -28,9 +38,20 @@ function trocarDePagina(event: Event)
         target = target.parentNode as HTMLElement;
     }
 
-    const pagina = $(`#${target.dataset.pagina}`) as HTMLElement;
-
     target.classList.add("opcaoMenuSelecionado");
+
+    mudarParaAPagina(target.dataset.pagina as string);
+
+}
+
+function mudarParaAPagina(idPagina: string)
+{
+    const paginaAtivada = $('.pagina-ativada') as HTMLElement;
+
+    paginaAtivada.classList.remove('pagina-ativada');
+    paginaAtivada.classList.add('pagina-desativada');
+
+    const pagina = $(`#${idPagina}`) as HTMLElement;
 
     pagina.classList.remove("pagina-desativada");
     pagina.classList.add('pagina-ativada');

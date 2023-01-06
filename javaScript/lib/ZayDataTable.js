@@ -370,3 +370,4 @@ export class ZayDataTable {
         btn.classList.add(`zayDataTable__btnPaginacaoAtivado`, `${this.nome_tabela}__btn_paginacao_selecionado`);
     }
 }
+//# sourceMappingURL=ZayDataTable.js.map

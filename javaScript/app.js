@@ -6,20 +6,31 @@ import { listarPrecificacoes } from './listagemPrecificacoes.js';
 import { listarFormasDePagamento } from './listagemFormasDePagamento.js';
 import { listarUsuarios } from './listagemUsuarios.js';
 elementosComAlturasIguais($("#header"), $("#headerMenu"));
-const btnsDeTrocarDePagina = $all('.opcaoMenu');
-btnsDeTrocarDePagina.forEach(btn => btn.addEventListener('click', trocarDePagina));
-function trocarDePagina(event) {
-    const paginaAtivada = $('.pagina-ativada');
+const btnsDeTrocarDePaginaMenu = $all('.btnTrocarDePaginaMenu');
+btnsDeTrocarDePaginaMenu.forEach(btn => btn.addEventListener('click', trocarDePaginaMenu));
+const btnTrocarDePagina = $all(".btnTrocarDePagina");
+btnTrocarDePagina.forEach(btn => btn.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target.classList.contains('material-icons')) {
+        target = target.parentNode;
+    }
+    mudarParaAPagina(target.dataset.pagina);
+}));
+function trocarDePaginaMenu(event) {
     const btnAtivado = $('.opcaoMenuSelecionado');
-    paginaAtivada.classList.remove('pagina-ativada');
-    paginaAtivada.classList.add('pagina-desativada');
     btnAtivado.classList.remove('opcaoMenuSelecionado');
     let target = event.target;
     if (target.classList.contains('material-icons')) {
         target = target.parentNode;
     }
-    const pagina = $(`#${target.dataset.pagina}`);
     target.classList.add("opcaoMenuSelecionado");
+    mudarParaAPagina(target.dataset.pagina);
+}
+function mudarParaAPagina(idPagina) {
+    const paginaAtivada = $('.pagina-ativada');
+    paginaAtivada.classList.remove('pagina-ativada');
+    paginaAtivada.classList.add('pagina-desativada');
+    const pagina = $(`#${idPagina}`);
     pagina.classList.remove("pagina-desativada");
     pagina.classList.add('pagina-ativada');
 }
@@ -29,3 +40,4 @@ listarMensalidades();
 listarPrecificacoes();
 listarFormasDePagamento();
 listarUsuarios();
+//# sourceMappingURL=app.js.map

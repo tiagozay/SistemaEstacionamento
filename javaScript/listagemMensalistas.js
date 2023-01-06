@@ -72,3 +72,4 @@ export function listarMensalistas() {
         new AcaoRegistro(btnExcluirMensalista, () => { }),
     ], null, 5);
 }
+//# sourceMappingURL=listagemMensalistas.js.map

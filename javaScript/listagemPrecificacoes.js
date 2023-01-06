@@ -62,3 +62,4 @@ export function listarPrecificacoes() {
         new AcaoRegistro(btnExcluirPrecificacao, () => { }),
     ], null, 5);
 }
+//# sourceMappingURL=listagemPrecificacoes.js.map

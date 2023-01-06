@@ -65,3 +65,4 @@ export function formata_telefone(telefone) {
 export function remove_formatacao_telefone(telefone) {
     return telefone.replace(/[()\s-]/g, '');
 }
+//# sourceMappingURL=funcoesUtilitarias.js.map

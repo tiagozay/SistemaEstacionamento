@@ -104,3 +104,4 @@ function formataStatusDeAcordoComValor() {
         }
     });
 }
+//# sourceMappingURL=listagemTikets.js.map

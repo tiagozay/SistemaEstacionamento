@@ -63,3 +63,4 @@ export function listarUsuarios() {
         new AcaoRegistro(btnExcluirUsuario, () => { }),
     ], null, 5);
 }
+//# sourceMappingURL=listagemUsuarios.js.map
