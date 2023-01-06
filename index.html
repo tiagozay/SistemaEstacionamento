@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="assets/styles/formularioAdicionarTiket.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalista.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalidade.css">
+    <link rel="stylesheet" href="assets/styles/formularioAdicionarPrecificacao.css">
 
     <title>Document</title>
 </head>
@@ -424,7 +425,7 @@
 
             <section class="secaoDeInformacoes">
                 <div id="divBtnNovo">
-                    <button id="btnAdicionarNovo">
+                    <button class="btnTrocarDePagina" data-pagina="formularioCadastroNovaPrecificacao" id="btnAdicionarNovo">
                         <i class="material-icons">add</i>
                         Novo
                     </button>
@@ -783,7 +784,7 @@
             
         </section>
 
-        <section id="formularioCadastroNovaMensalidade" class="pagina-ativada">
+        <section id="formularioCadastroNovaMensalidade" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -862,18 +863,89 @@
                             <i class="material-icons">save</i>
                             Salvar
                         </button>
-                        <button type="button" class="btnTrocarDePagina" id="btnVoltarTiket" data-pagina="mensalistas">Voltar</button>
+                        <button type="button" class="btnTrocarDePagina" id="btnVoltarTiket" data-pagina="mensalidades">Voltar</button>
                     </div>
                 </form>
                
 
             </section>
-            
+
         </section>
 
+        <section id="formularioCadastroNovaPrecificacao" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__nome">
+                    <div id="tituloDaPagina__icone">
+                        <i class="material-icons">payments</i>
+                    </div>
+                    <div id="tituloDaPagina__textos">
+                        <h2>Cadastrar precificação</h2>
+                        <span>Cadastrando precificações</span>
+                    </div>
+                </div>
+                <div id="caminhoDasEtapas">
+                    <a class="btnTrocarDePagina" data-pagina="home"><i class="material-icons">home</i></a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="btnTrocarDePagina infoPagina" data-pagina="precificacoes">Precificações</a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="infoPagina">Cadastrar precificação</a>
+                </div>
+             
+            </div>
 
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                </div>
+
+                <form action="" id="formAdicionarNovoTiket">
+                    <div  class="linha3Inputs">
+                        <label for="">
+                            Categoria
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInputMenor">
+                            Valor hora 
+                            <input type="number">
+                        </label>
+                        <label for="" class="labelInputMenor">
+                            Valor mensalidade
+                            <input type="number">
+                        </label>
+                        <label for="" class="labelInputMenor">
+                            Número de vagas
+                            <input type="number">
+                        </label>
+                        <label for="" class="labelInputMenor">
+                            Ativa
+                            <select name="" id="">
+                                <option value="">Sim</option>
+                                <option value="">Não</option>
+                            </select>
+                        </label>
+                    </div>
+    
+                    <div id="divBtnSalvarECancelarTiket">
+                        <button id="btnSalvarTiket">
+                            <i class="material-icons">save</i>
+                            Salvar
+                        </button>
+                        <button type="button" class="btnTrocarDePagina" id="btnVoltarTiket" data-pagina="precificacoes">Voltar</button>
+                    </div>
+                </form>
+               
+
+            </section>
         
-
+         </section>
+    
     </section>
 
     <script>
