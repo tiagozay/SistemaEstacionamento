@@ -27,6 +27,9 @@ const paginas = [
     { idPagina: 'usuarios', paginaMae: null },
     { idPagina: 'sistema', paginaMae: null },
     { idPagina: 'formularioAdcNovoTiket', paginaMae: 'estacionamento' },
+    { idPagina: 'formAdicionarMensalista', paginaMae: 'mensalistas' },
+    { idPagina: 'formularioCadastroNovaMensalidade', paginaMae: 'mensalidades' },
+    { idPagina: 'formularioCadastroNovaPrecificacao', paginaMae: 'precificacoes' },
 ];
 function trocarDePagina(idPagina) {
     const paginaAtivada = $('.pagina-ativada');
