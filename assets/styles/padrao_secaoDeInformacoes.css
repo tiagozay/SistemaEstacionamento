@@ -27,6 +27,38 @@
     font-size: 12px;
     font-weight: 600;
 }
+.secaoDeInformacoes #divBtnVoltar{
+    display: flex;
+    padding: 20px 20px;
+    border-bottom: 1px rgb(198, 198, 198) solid;
+}
+.secaoDeInformacoes #btnVoltar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 7px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(102, 102, 102);
+    transition: 200ms;
+}
+.secaoDeInformacoes #btnVoltar i{
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 1px;
+    color: rgb(102, 102, 102);
+}
+.secaoDeInformacoes #btnVoltar:hover{
+    background-color: rgb(226, 226, 226);
+
+}
+
+
 
 
 .secaoDeInformacoes .divCamposSelectEBuscaDaTabela{

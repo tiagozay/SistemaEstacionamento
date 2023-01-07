@@ -62,10 +62,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 300ms;
 }
 .formPadrao__btnSalvar i{
     font-size: 18px;
     margin-right: 3px;
+}
+.formPadrao__btnSalvar:hover{
+    background-color: #0061c9;
 }
 .formPadrao__btnVoltar{
     background-color: rgb(235, 235, 235);
@@ -76,4 +80,8 @@
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
+    transition: 300ms;
+}
+.formPadrao__btnVoltar:hover{
+    background-color: rgb(215, 215, 215);
 }
