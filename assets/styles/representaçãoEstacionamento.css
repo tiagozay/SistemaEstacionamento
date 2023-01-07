@@ -1,0 +1,110 @@
+#representacaoEstacionamento{
+    background-color: rgb(251, 251, 251);
+    border-radius: 4px;
+    margin-top: 30px;
+    box-shadow: 0 0 6px rgb(188, 188, 188);
+    padding: 20px;
+}
+#representacaoEstacionamento__divTitulo{
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(156, 156, 156);
+}
+#representacaoEstacionamento__estacionamento{
+    display: grid;
+    height: 520px;
+    grid-template-columns: 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14%;
+    grid-template-rows: 20% 13.33% 20% 20% 13.33% 13.33%;
+    background-color: black;
+}
+#ruaVerticalEsquerda{
+    grid-column: 1 / 2;
+    grid-row: 2 / 6;
+    background-image: url('../images/download.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#ultimaLinhaDeVagas{
+    grid-column: 1 / 15;
+    grid-row: 1 / 2;
+    background-size: cover;
+    display: flex;
+}
+#ultimaRuaHorizontal{
+    grid-column: 2 / 13;
+    grid-row: 2 / 3;
+    background-image: url('../images/download.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#penultimaLinhaDeVagas{
+    grid-column: 2 / 13;
+    grid-row: 3 / 4;
+    background-color: blue;
+    display: flex;
+}
+#primeiraLinhaDeVagas{
+    grid-column: 2 / 13;
+    grid-row: 4 / 5;
+    background-color: blue;
+    display: flex;
+    border-top: 1px yellow solid;
+}
+#primeiraRuaHorizontal{
+    grid-column: 2 / 13;
+    grid-row: 5 / 6;
+    background-image: url('../images/download.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.iconeSinalizacaoRua_esquerda{
+    color: rgb(164, 164, 164);
+    /* display: none; */
+}
+.iconeSinalizacaoRua_pCima{
+    color: rgb(164, 164, 164);
+    /* display: none; */
+
+}
+#ruaVerticalSaida{
+    grid-column: 13 / 14;
+    grid-row: 2 / 7;
+    background-image: url('../images/download.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#ruaVerticalEntrada{
+    grid-column: 14 / 15;
+    grid-row: 2 / 7;
+    background-image: url('../images/download.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+#linhaVagasDasMotos{
+    grid-column: 1 / 13;
+    grid-row: 6 / 7;
+    background-color: blue;
+    display: flex;
+}
+
+.vaga{
+    width: 9%;
+    border-left: 1px yellow solid;
+    border-right: 1px yellow  solid;
+    height: 100%;
+    background-image: url('../images/download.jpg');
+} 
+.vagaSemBordaEsquerda{
+    border-left: none;
+}
+.vagaSemBordaDireita{
+    border-right: none;
+}

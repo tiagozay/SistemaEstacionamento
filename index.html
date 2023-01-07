@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/styles/formularioAdicionarFormaDePagamento.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarUsuario.css">
     <link rel="stylesheet" href="assets/styles/formularioConfigSistema.css">
+    <link rel="stylesheet" href="assets/styles/representaçãoEstacionamento.css">
 
     <title>Document</title>
 </head>
@@ -44,7 +45,7 @@
 
         <div id="opcoesMenu">
             <div class="opcoesMenu__titulo">Menu</div>
-            <div class="opcaoMenu btnTrocarDePaginaMenu" data-pagina="home">
+            <div class="opcaoMenu btnTrocarDePaginaMenu opcaoMenuSelecionado" data-pagina="home">
                 <i class="material-icons">home</i>
                 Home
             </div>
@@ -86,7 +87,7 @@
             <button id="btnAbrirMenuUsuario" class="material-icons">person</button>
         </header>
 
-        <section class="pagina-desativada" id="home">
+        <section class="pagina-ativada" id="home">
 
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
@@ -203,6 +204,106 @@
 
                     <h6>Sistema</h6>
                 </div>
+            </section>
+
+            <section id="representacaoEstacionamento">
+                <div id="representacaoEstacionamento__divTitulo">
+                    <h3>Estacionamento</h3>
+                </div>
+                <div id="representacaoEstacionamento__estacionamento">
+                    <div id="ruaVerticalEsquerda">
+                        <i class="material-icons iconeSinalizacaoRua_pCima">arrow_upward</i>
+                        <i class="material-icons iconeSinalizacaoRua_pCima">arrow_upward</i>
+                    </div>
+                    <div id="ultimaLinhaDeVagas">
+                        <div class="vaga vagaSemBordaEsquerda" id="vaga13"></div>
+                        <div class="vaga" id="vaga15"></div>
+                        <div class="vaga" id="vaga17"></div>
+                        <div class="vaga" id="vaga19"></div>
+                        <div class="vaga" id="vaga21"></div>
+                        <div class="vaga" id="vaga23"></div>
+                        <div class="vaga" id="vaga25"></div>
+                        <div class="vaga" id="vaga27"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga" id="vaga33"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga vagaSemBordaDireita" id="vaga33"></div>
+                    </div>
+                    <div id="ultimaRuaHorizontal">
+                        <i class="material-icons iconeSinalizacaoRua_esquerda">arrow_forward</i>
+                        <i class="material-icons iconeSinalizacaoRua_esquerda">arrow_forward</i>
+                        <i class="material-icons iconeSinalizacaoRua_esquerda">arrow_forward</i>
+                    </div>
+                    <div id="penultimaLinhaDeVagas">
+                        <div class="vaga" id="vaga13"></div>
+                        <div class="vaga" id="vaga15"></div>
+                        <div class="vaga" id="vaga17"></div>
+                        <div class="vaga" id="vaga19"></div>
+                        <div class="vaga" id="vaga21"></div>
+                        <div class="vaga" id="vaga23"></div>
+                        <div class="vaga" id="vaga25"></div>
+                        <div class="vaga" id="vaga27"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga" id="vaga33"></div>
+                    </div>
+                    <div id="primeiraLinhaDeVagas">
+                        <div class="vaga" id="vaga13"></div>
+                        <div class="vaga" id="vaga15"></div>
+                        <div class="vaga" id="vaga17"></div>
+                        <div class="vaga" id="vaga19"></div>
+                        <div class="vaga" id="vaga21"></div>
+                        <div class="vaga" id="vaga23"></div>
+                        <div class="vaga" id="vaga25"></div>
+                        <div class="vaga" id="vaga27"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga" id="vaga33"></div>
+                    </div>
+                    <div id="primeiraRuaHorizontal">
+                        <i class="material-icons iconeSinalizacaoRua_esquerda">arrow_back</i>
+                        <i class="material-icons iconeSinalizacaoRua_esquerda">arrow_back</i>
+                        <i class="material-icons iconeSinalizacaoRua_esquerda">arrow_back</i>
+                    </div>
+                    <div id="ruaVerticalSaida">
+                        <i class="material-icons iconeSinalizacaoRua_pCima">arrow_downward</i>
+                        <i class="material-icons iconeSinalizacaoRua_pCima">arrow_downward</i>
+                    </div>
+                    <div id="ruaVerticalEntrada">
+                        <i class="material-icons iconeSinalizacaoRua_pCima">arrow_upward</i>
+                    </div>
+                    <div id="linhaVagasDasMotos">
+                        <div class="vaga vagaSemBordaEsquerda" id="vaga13"></div>
+                        <div class="vaga" id="vaga15"></div>
+                        <div class="vaga" id="vaga17"></div>
+                        <div class="vaga" id="vaga19"></div>
+                        <div class="vaga" id="vaga21"></div>
+                        <div class="vaga" id="vaga23"></div>
+                        <div class="vaga" id="vaga25"></div>
+                        <div class="vaga" id="vaga27"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga" id="vaga33"></div>
+                        <div class="vaga" id="vaga13"></div>
+                        <div class="vaga" id="vaga15"></div>
+                        <div class="vaga" id="vaga17"></div>
+                        <div class="vaga" id="vaga19"></div>
+                        <div class="vaga" id="vaga21"></div>
+                        <div class="vaga" id="vaga23"></div>
+                        <div class="vaga" id="vaga25"></div>
+                        <div class="vaga" id="vaga27"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga" id="vaga33"></div>
+                        <div class="vaga" id="vaga29"></div>
+                        <div class="vaga" id="vaga31"></div>
+                        <div class="vaga" id="vaga33"></div>
+                        <div class="vaga" id="vaga33"></div>
+                    </div>
+                </div>
+                
             </section>
             
         </section>
@@ -1134,7 +1235,7 @@
             
         </section>
 
-        <section id="formularioConfigSistema" class="pagina-ativada">
+        <section id="formularioConfigSistema" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
