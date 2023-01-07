@@ -42,6 +42,7 @@ const paginas = [
     {idPagina: 'formAdicionarMensalista', paginaMae: 'mensalistas'},
     {idPagina: 'formularioCadastroNovaMensalidade', paginaMae: 'mensalidades'},
     {idPagina: 'formularioCadastroNovaPrecificacao', paginaMae: 'precificacoes'},
+    {idPagina: 'formCadastrarFormaDePagamento', paginaMae: 'formas_de_pagamento'},
 ];
 
 

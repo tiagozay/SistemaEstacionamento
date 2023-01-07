@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalista.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarMensalidade.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarPrecificacao.css">
+    <link rel="stylesheet" href="assets/styles/formularioAdicionarFormaDePagamento.css">
 
     <title>Document</title>
 </head>
@@ -466,11 +467,11 @@
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
-                        <i class="material-icons">attach_money</i>
+                        <i class="material-icons">credit_card</i>
                     </div>
                     <div id="tituloDaPagina__textos">
-                        <h2>Precificações cadastradas</h2>
-                        <span>Listando todos as Precificações cadastradas</span>
+                        <h2>Formas de pagamento</h2>
+                        <span>Listando todos as Formas de pagamento cadastradas</span>
                     </div> 
                 </div>
                 <div id="caminhoDasEtapas">
@@ -490,7 +491,7 @@
 
             <section class="secaoDeInformacoes">
                 <div id="divBtnNovo">
-                    <button id="btnAdicionarNovo">
+                    <button class="btnTrocarDePagina" id="btnAdicionarNovo" data-pagina="formCadastrarFormaDePagamento">
                         <i class="material-icons">add</i>
                         Novo
                     </button>
@@ -498,11 +499,11 @@
 
                 <div class="divCamposSelectEBuscaDaTabela">
                     <label>
-                        Somente mensalidades
+                        Somente formas de pagamento
                         <select name="" class="selectFiltros">
                             <option value="todos">Todas</option>
                             <option value="abertos">Ativas</option>
-                            <option value="fechados">Vencidas</option>
+                            <option value="fechados">Inativas</option>
                         </select>
 
                     </label>
@@ -873,7 +874,7 @@
 
         </section>
 
-        <section id="formularioCadastroNovaPrecificacao" class="pagina-ativada">
+        <section id="formularioCadastroNovaPrecificacao" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -945,14 +946,75 @@
 
             </section>
         
-         </section>
+        </section>
+
+        <section id="formCadastrarFormaDePagamento" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__nome">
+                    <div id="tituloDaPagina__icone">
+                        <i class="material-icons">attach_money</i>
+                    </div>
+                    <div id="tituloDaPagina__textos">
+                        <h2>Cadastrar formas de pagamento</h2>
+                        <span>Cadastrando formas de pagamento</span>
+                    </div>
+                </div>
+                <div id="caminhoDasEtapas">
+                    <a class="btnTrocarDePagina" data-pagina="home"><i class="material-icons">home</i></a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="btnTrocarDePagina infoPagina" data-pagina="formas_de_pagamento">Formas de pagamento</a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="infoPagina">Cadastrar forma de pagamento</a>
+                </div>
+             
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                </div>
+
+                <form action="" class="formPadrao">
+                    <div  class="linha3Inputs">
+                        <label for="" class="labelInputMaior">
+                            Nome da forma de pagamento
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Ativa
+                            <select name="" id="">
+                                <option value="">Sim</option>
+                                <option value="">Não</option>
+                            </select>
+                        </label>
+                    </div>
+    
+                    <div class="formPadrao__divSalvarECancelar">
+                        <button class="formPadrao__btnSalvar">
+                            <i class="material-icons">save</i>
+                            Salvar
+                        </button>
+                        <button type="button" class="btnTrocarDePagina formPadrao__btnVoltar" data-pagina="precificacoes">Voltar</button>
+                    </div>
+                </form>
+               
+
+            </section>
+        
+        </section>
     
     </section>
 
     <script>
 
         
-
     </script>
 
 

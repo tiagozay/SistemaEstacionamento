@@ -16,6 +16,12 @@
     width: 31%;
     font-size: 13px;
 }
+.labelInputMenor{
+    width: 15%!important;
+}
+.labelInputMaior{
+    width: 66%!important;
+}
 .linha3Inputs input, select{
     font-family: 'Montserrat', sans-serif;
     padding: 0 10px;
@@ -40,7 +46,7 @@
     font-weight: 500;
     font-size: 12px;
     cursor: pointer;
-    margin-right: 6px;
+    margin-right: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
