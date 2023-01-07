@@ -5,12 +5,12 @@
     margin-top: 15px;
     display: flex;
 }
-.linha3Inputs{
+.linhaInputs{
     display: flex;
     padding: 15px 0;
     justify-content: space-between;
 }
-.linha3Inputs label{
+.linhaInputs label{
     display: flex;
     flex-direction: column;
     width: 31%;
@@ -34,7 +34,7 @@
 .labelInput100{
     width: 100%!important;
 }
-.linha3Inputs input, select, textarea{
+.linhaInputs input, select, textarea{
     font-family: 'Montserrat', sans-serif;
     padding: 0 10px;
     box-sizing: border-box;

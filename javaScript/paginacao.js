@@ -25,7 +25,7 @@ const paginas = [
     { idPagina: 'precificacoes', paginaMae: null },
     { idPagina: 'formas_de_pagamento', paginaMae: null },
     { idPagina: 'usuarios', paginaMae: null },
-    { idPagina: 'sistema', paginaMae: null },
+    { idPagina: 'formularioConfigSistema', paginaMae: null },
     { idPagina: 'formularioAdcNovoTiket', paginaMae: 'estacionamento' },
     { idPagina: 'formAdicionarMensalista', paginaMae: 'mensalistas' },
     { idPagina: 'formularioCadastroNovaMensalidade', paginaMae: 'mensalidades' },
