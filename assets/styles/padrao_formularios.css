@@ -16,8 +16,14 @@
     width: 31%;
     font-size: 13px;
 }
+.labelInput10{
+    width: 8%!important; 
+}
 .labelInputMenor{
     width: 15%!important;
+}
+.labelInput22{
+    width: 22%!important;
 }
 .labelInputMeio{
     width: 48%!important;
@@ -25,7 +31,10 @@
 .labelInputMaior{
     width: 66%!important;
 }
-.linha3Inputs input, select{
+.labelInput100{
+    width: 100%!important;
+}
+.linha3Inputs input, select, textarea{
     font-family: 'Montserrat', sans-serif;
     padding: 0 10px;
     box-sizing: border-box;

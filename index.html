@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/styles/formularioAdicionarPrecificacao.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarFormaDePagamento.css">
     <link rel="stylesheet" href="assets/styles/formularioAdicionarUsuario.css">
+    <link rel="stylesheet" href="assets/styles/formularioConfigSistema.css">
 
     <title>Document</title>
 </head>
@@ -72,7 +73,7 @@
                 <i class="material-icons">group</i>
                 Usuários
             </div>
-            <div class="opcaoMenu btnTrocarDePaginaMenu" data-pagina="sistema">
+            <div class="opcaoMenu btnTrocarDePaginaMenu" data-pagina="formularioConfigSistema">
                 <i class="material-icons">settings</i>
                 Sistema
             </div>
@@ -1011,7 +1012,7 @@
         
         </section>
 
-        <section id="formularioAdicionarNovoUsuario" class="pagina-ativada">
+        <section id="formularioAdicionarNovoUsuario" class="pagina-desativada">
             <div id="tituloDaPagina">
                 <div id="tituloDaPagina__nome">
                     <div id="tituloDaPagina__icone">
@@ -1101,6 +1102,123 @@
                             Salvar
                         </button>
                         <button type="button" class="btnTrocarDePagina formPadrao__btnVoltar" data-pagina="usuarios">Voltar</button>
+                    </div>
+                </form>
+               
+
+            </section>
+            
+        </section>
+
+        <section id="formularioConfigSistema" class="pagina-ativada">
+            <div id="tituloDaPagina">
+                <div id="tituloDaPagina__nome">
+                    <div id="tituloDaPagina__icone">
+                        <i class="material-icons">group</i>
+                    </div>
+                    <div id="tituloDaPagina__textos">
+                        <h2>Editar Informações do sistema</h2>
+                        <span>Chegou a hora de editar as informações do sistema</span>
+                    </div>
+                </div>
+                <div id="caminhoDasEtapas">
+                    <a class="btnTrocarDePagina" data-pagina="home"><i class="material-icons">home</i></a> 
+                    <span class="barraSeparadora">/</span>
+                    <a class="infoPagina">Configurações do sistema</a> 
+                </div>
+             
+            </div>
+
+            <div id="mensagemDeBoasVindas">
+                <div id="conteudoMensagem">
+                    <i class="material-icons">mood</i>
+                    <span>Seja bem vindo (a) Tiago!</span>
+                </div>
+                <button id="btnFecharMensagem" class="material-icons">close</button>
+            </div>
+
+            <section class="secaoDeInformacoes">
+                <div id="divBtnNovo">
+                </div>
+
+                <form action="" class="formPadrao">
+                    <div  class="linha3Inputs">
+                        <label for="" class="labelInputMeio">
+                            Razão social
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInputMeio">
+                            Nome Fantasia
+                            <input type="text">
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="" class="labelInput22">
+                            CNPJ
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInput22">
+                            Insc. estadual
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInput22">
+                            Telefone fixo
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInput22">
+                            Telefone celular
+                            <input type="text">
+                        </label>
+                    </div>
+    
+                    <div  class="linha3Inputs">
+                        <label for="" class="labelInputMenor">
+                            CEP
+                            <input type="text">
+                        </label>
+                        <label for="">
+                            Endereço
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInputMenor">
+                            Número
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInput22">
+                            Cidade
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInput10">
+                            UF
+                            <input type="text">
+                        </label>
+                    </div>
+
+                    <div  class="linha3Inputs">
+                        <label for="" class="labelInputMeio">
+                            URL do site
+                            <input type="text">
+                        </label>
+                        <label for="" class="labelInputMeio">
+                            E-mail
+                            <input type="email">
+                        </label>
+                    </div>
+
+                    <div  class="linha3Inputs">
+                        <label for="" class="labelInput100">
+                            Descrição do ticket de estacionamento
+                            <textarea name="" id="textareaDescricaoEstacionamento" cols="30" rows="10"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="formPadrao__divSalvarECancelar">
+                        <button class="formPadrao__btnSalvar">
+                            <i class="material-icons">save</i>
+                            Salvar
+                        </button>
+                        <button type="button" class="btnTrocarDePagina formPadrao__btnVoltar" data-pagina="home">Voltar</button>
                     </div>
                 </form>
                
