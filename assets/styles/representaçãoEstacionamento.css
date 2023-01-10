@@ -4,6 +4,56 @@
     margin-top: 30px;
     box-shadow: 0 0 6px rgb(188, 188, 188);
     padding: 20px;
+    width: 1014px;
+}
+.carro{
+    width: 40px;
+    height: 70px;
+    background-color: rgb(81, 81, 81);
+    grid-row: 6 / 7;
+    grid-column: 14 / 15;
+    margin: 0 auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.carroEstacionado{
+    margin-top: 30px!important;
+}
+#carro_teto{
+    background-color: rgb(139, 139, 139);
+    width: 30px;
+    height: 35px;
+    margin-bottom: 5px;
+}
+#carro_linhaLanternasTraseiras{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* padding: 0  6px; */
+    /* margin-bottom: 3px; */
+}
+#carro_linhaLanternasTraseiras .lanterna{
+    width: 6px;
+    height: 6px;
+    background-color: rgb(255, 55, 55);
+    border-bottom-left-radius: 5px;
+    /* border-radius: 3px; */
+}
+#carro_linhaLanternasTraseiras .lanterna:nth-child(2){
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    /* border-radius: 3px; */
+}
+#placa{
+    background-color: rgb(203, 203, 203);
+    font-size: 9px;
 }
 #representacaoEstacionamento__divTitulo{
     padding: 15px 10px;
@@ -11,11 +61,12 @@
 }
 #representacaoEstacionamento__estacionamento{
     display: grid;
-    height: 520px;
+    height: 570px;
     grid-template-columns: 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14% 7.14%;
     grid-template-rows: 20% 13.33% 20% 20% 13.33% 13.33%;
     background-color: rgb(232, 232, 232);
     margin-top: 15px;
+    transition: 200ms;
 }
 #ruaVerticalEsquerda{
     grid-column: 1 / 2;
@@ -131,4 +182,4 @@
 #penultimaLinhaDeVagas .vaga{
     align-items: flex-end;
 }
-
+  
