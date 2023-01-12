@@ -87,7 +87,7 @@ export class RepresentacaoEstacionamento
         const carro = createDomElement("div", `carro_${placa}`, null, 'carro');
 
         carro.innerHTML = `
-            <div id="carro_teto"></div>
+            <div id="carro_teto" class='teto'></div>
             <div id="carro_linhaLanternasTraseiras">
                 <div class="lanterna"></div>
                 <div class="lanterna"></div>
@@ -102,6 +102,25 @@ export class RepresentacaoEstacionamento
             inicioX: 14,
             fimX: 15,
         }
+        
+        const balaoPlaca = $("#balaoPlacaVeiculo") as HTMLElement;
+
+        carro.addEventListener('mousemove', (event: MouseEvent) => {
+
+            let target = event.target as HTMLElement;
+    
+            if(target.classList.contains("teto")){
+                target = target.parentNode as HTMLElement;
+            }
+    
+            balaoPlaca.style.display = 'flex';
+            balaoPlaca.style.top = `${target.offsetTop + 70}px`;
+            balaoPlaca.style.left = `${target.offsetLeft - 11.29}px`;
+        });
+    
+        carro.addEventListener('mouseout', () => {
+            balaoPlaca.style.display = 'none';
+        });
 
         return carro;
     }

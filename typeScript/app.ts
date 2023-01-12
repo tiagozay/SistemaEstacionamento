@@ -1,4 +1,4 @@
-import {$, createDomElement, elementosComAlturasIguais} from './lib/funcoesUtilitarias.js';
+import {$, $all, createDomElement, elementosComAlturasIguais} from './lib/funcoesUtilitarias.js';
 import { listarMensalistas } from './listagemMensalistas.js';
 import { listarTikets } from './listagemTikets.js';
 import { listarMensalidades } from './listagemMensalidades.js';
@@ -17,3 +17,5 @@ listarMensalidades();
 listarPrecificacoes();
 listarFormasDePagamento();
 listarUsuarios();
+
+RepresentacaoEstacionamento.estacionarVeiculo("c1", 'APN-2018');

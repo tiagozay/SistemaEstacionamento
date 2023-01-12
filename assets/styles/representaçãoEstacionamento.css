@@ -6,6 +6,16 @@
     padding: 20px;
     width: 1014px;
 }
+#balaoPlacaVeiculo{
+    position: absolute;
+    background-color: rgb(86, 86, 86);
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 11px;
+    margin-top: 3px;
+    display: none;
+}
 .carro{
     width: 40px;
     height: 70px;
