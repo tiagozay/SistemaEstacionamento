@@ -1,0 +1,21 @@
+import { PrecificacoesService } from "../services/PrecificacoesService.js";
+export class Veiculo {
+    constructor(placa, marca, modelo, segmento) {
+        if (placa.trim().length != 7 && placa.trim().length != 8) {
+            throw new Error("Placa inválida.");
+        }
+        if (marca.trim().length == 0 || modelo.trim().length == 0 || segmento.trim().length == 0) {
+            throw new Error("Dados inválidos.");
+        }
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.segmento = segmento;
+        const precificacao = PrecificacoesService.buscaPrecificacaoDeCategoria(segmento);
+        if (!precificacao) {
+            throw new Error("Precificacao não encotrada.");
+        }
+        this.valorHora = precificacao.valorHora;
+    }
+}
+//# sourceMappingURL=Veiculo.js.map
