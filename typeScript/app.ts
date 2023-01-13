@@ -11,10 +11,12 @@ import { Tiket } from './models/Tiket.js';
 import { Veiculo } from './models/Veiculo.js';
 import { FormaDePagamento } from './models/FormaDePagamento.js';
 import { StatusTiket } from './enums/StatusTiket.js';
+import { TiketController } from './controllers/tiket-controller.js';
+import { configuraInputsDePlaca } from './padraoInputPlaca.js';
 
 elementosComAlturasIguais($("#header") as HTMLElement, $("#headerMenu") as HTMLElement);
 
-configuraPaginacao();
+configuraInputsDePlaca();
 listarTikets();
 listarMensalistas();
 listarMensalidades();
@@ -24,10 +26,7 @@ listarUsuarios();
 
 RepresentacaoEstacionamento.estacionarVeiculo("c1", 'APN-2018');
 
-let tiket = new Tiket(
-    new Veiculo("APN-2018", 'Gol', 'Gol', 'Carro'), 
-    StatusTiket['Pago'],
-    new FormaDePagamento("Dinheiro", false)
-);
+const tiketController = new TiketController();
 
-console.log(tiket);
+
+configuraPaginacao();
