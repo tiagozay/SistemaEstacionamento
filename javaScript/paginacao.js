@@ -8,14 +8,15 @@ export function configuraPaginacao() {
         }
         trocarDePagina(target.dataset.pagina);
     }));
-    const btnTrocarDePagina = $all(".btnTrocarDePagina");
-    btnTrocarDePagina.forEach(btn => btn.addEventListener('click', event => {
-        let target = event.target;
-        if (target.classList.contains('material-icons')) {
-            target = target.parentNode;
+    document.addEventListener('click', (event) => {
+        let alvo = event.target;
+        if (alvo.classList.contains('btnTrocarDePagina')) {
+            if (alvo.classList.contains('material-icons')) {
+                alvo = alvo.parentNode;
+            }
+            trocarDePagina(alvo.dataset.pagina);
         }
-        trocarDePagina(target.dataset.pagina);
-    }));
+    });
 }
 const paginas = [
     { idPagina: 'home', paginaMae: null },

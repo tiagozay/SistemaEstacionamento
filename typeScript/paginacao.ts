@@ -15,18 +15,19 @@ export function configuraPaginacao()
     
     } ) );
     
-    const btnTrocarDePagina = $all(".btnTrocarDePagina");
-    btnTrocarDePagina.forEach( btn => btn.addEventListener('click', event => {
+    document.addEventListener('click', (event: Event) => {
+        let alvo = event.target as HTMLElement;
+
+        if(alvo.classList.contains('btnTrocarDePagina')){
     
-        let target = event.target as HTMLElement;
-    
-        if(target.classList.contains('material-icons')){
-            target = target.parentNode as HTMLElement;
+            if(alvo.classList.contains('material-icons')){
+                alvo = alvo.parentNode as HTMLElement;
+            }
+        
+            trocarDePagina(alvo.dataset.pagina as string);
         }
-    
-        trocarDePagina(target.dataset.pagina as string);
-    
-    }) );
+
+    });
 }
 
 const paginas = [
