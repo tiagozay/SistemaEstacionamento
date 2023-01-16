@@ -18,4 +18,16 @@ export class DateHelper
         var minuto = data.getMinutes();
         return `${dia < 10 ? '0' + dia : dia}/${mes < 10 ? '0' + mes : mes}/${ano} ${hora < 10 ? '0' + hora : hora}:${minuto < 10 ? '0' + minuto : minuto}`;
     }
+
+    static transformaStringEmDate(data: string): Date
+    {
+        let dataDividida = data.split(' ');
+
+        let somenteData = dataDividida[0];
+        somenteData = somenteData.split('/').reverse().join('-');
+
+        let somenteHorario = dataDividida[1];
+
+        return new Date( `${somenteData}T${somenteHorario}`);
+    }
 }

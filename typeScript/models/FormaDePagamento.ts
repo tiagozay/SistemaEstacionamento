@@ -1,6 +1,6 @@
 export class FormaDePagamento
 {
-    public _nomeFormaDePagamento: string;
+    private _nomeFormaDePagamento: string;
     public ativa: boolean;
 
     constructor(nomeFormaDePagamento: string, ativa: boolean = true){
@@ -15,6 +15,11 @@ export class FormaDePagamento
         }
 
         this._nomeFormaDePagamento = nomeFormaDePagamento;
+    }
+
+    get nomeFormaDePagamento(): string
+    {
+        return this._nomeFormaDePagamento;
     }
 
 }

@@ -9,5 +9,8 @@ export class FormaDePagamento {
         }
         this._nomeFormaDePagamento = nomeFormaDePagamento;
     }
+    get nomeFormaDePagamento() {
+        return this._nomeFormaDePagamento;
+    }
 }
 //# sourceMappingURL=FormaDePagamento.js.map

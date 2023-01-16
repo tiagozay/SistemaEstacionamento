@@ -1,6 +1,9 @@
+import { DateHelper } from "../helpers/DateHelper.js";
 import { Veiculo } from "../models/Veiculo.js";
 import { PrecificacoesService } from "../services/PrecificacoesService.js";
 import { FormAddTiketView } from "../views/formAddTiket-view.js";
+import { Tiket } from "../models/Tiket.js";
+import { StatusTiket } from "../enums/StatusTiket.js";
 export class TiketController {
     constructor() {
         this.formView = new FormAddTiketView("#formAdcTiketView", this);
@@ -23,8 +26,12 @@ export class TiketController {
         const marca = formulario.marca.value;
         const modelo = formulario.modelo.value;
         const categoria = formulario.categoria.value;
-        console.log(placa, marca, modelo, categoria);
+        const precificacao = PrecificacoesService.buscaPrecificacaoDeCategoria(categoria);
+        const valorHora = precificacao.valorHora;
+        const numeroDaVaga = formulario.numeroDaVaga.value;
+        const dataEntrada = formulario.dataEntrada.value;
         const veiculo = new Veiculo(placa, marca, modelo, categoria);
+        const tiket = new Tiket(veiculo, DateHelper.transformaStringEmDate(dataEntrada), null, valorHora, StatusTiket["Em aberto"], null, numeroDaVaga);
     }
     buscaVeiculoPorPlaca(placa) {
         if (placa == 'APN-2018') {

@@ -4,6 +4,10 @@ import { PrecificacoesService } from "../services/PrecificacoesService.js";
 import { ProxyFactory } from "../services/ProxyFactory.js";
 import { FormAddTiketView } from "../views/formAddTiket-view.js";
 import { $ } from "../lib/funcoesUtilitarias.js";
+import { Tiket } from "../models/Tiket.js";
+import { StatusTiket } from "../enums/StatusTiket.js";
+import { FormaDePagamento } from "../models/FormaDePagamento.js";
+import { Precificacao } from "../models/Precificacao.js";
 
 
 export class TiketController
@@ -35,12 +39,23 @@ export class TiketController
         const placa = formulario.placa.value;
         const marca = formulario.marca.value;
         const modelo = formulario.modelo.value;
-        const categoria = formulario.categoria.value;
-
-        console.log(placa, marca, modelo, categoria);
+        const categoria = formulario.categoria.value; 
+        const precificacao = PrecificacoesService.buscaPrecificacaoDeCategoria(categoria) as Precificacao;
+        const valorHora = precificacao.valorHora; 
+        const numeroDaVaga = formulario.numeroDaVaga.value;
+        const dataEntrada = formulario.dataEntrada.value;
 
         const veiculo = new Veiculo(placa, marca, modelo, categoria);
 
+        const tiket = new Tiket(
+            veiculo, 
+            DateHelper.transformaStringEmDate(dataEntrada),
+            null,
+            valorHora,
+            StatusTiket["Em aberto"],
+            null,
+            numeroDaVaga,
+        );
 
     }
 

@@ -57,22 +57,22 @@ export class FormAddTiketView extends View {
                 </label>
                 <label for="">
                     Valor hora
-                    <input type="text" class="inputDesativado" readonly value=${model['valorHora'] ? model['valorHora'] : ""}> 
+                    <input type="text" name="valorHora" class="inputDesativado" readonly value=${model['valorHora'] ? model['valorHora'] : ""}> 
                 </label>
                 <label for="">
                     Número vaga
-                    <input type="text">
+                    <input type="text" name="numeroDaVaga">
                 </label>
             </div>
 
             <div  class="linhaInputs">
                 <label for="">
                     Data entrada
-                    <input type="text" class="inputDesativado" readonly value="${DateHelper.formataDataComHorario((new Date()))}">
+                    <input type="text" name="dataEntrada" class="inputDesativado" readonly value="${DateHelper.formataDataComHorario((new Date()))}">
                 </label>
                 <label for="">
                     Data saída
-                    <input type="text" class="inputDesativado" readonly value="${DateHelper.formataDataComHorario((new Date()))} | Em aberto">
+                    <input type="text" name="dataSaida" class="inputDesativado" readonly value="${DateHelper.formataDataComHorario((new Date()))} | Em aberto">
                 </label>
                 <label for="">
                     Tempo decorrido (horas e minutos)

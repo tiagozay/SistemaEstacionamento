@@ -4,29 +4,91 @@ import { Veiculo } from "./Veiculo.js";
 
 export class Tiket
 {
-    private readonly veiculo: Veiculo;
-    private _formaDePagamento: FormaDePagamento | string;
-    private status: StatusTiket;
+    public readonly veiculo: Veiculo;
+    private _formaDePagamento: FormaDePagamento | null;
+    public status: StatusTiket;
+    public readonly valorPorHora: number;
+    public readonly dataDeEntrada: Date;
+    private _dataDeSaida: Date;
+    public readonly numeroDaVaga: string | null;
 
-    constructor(veiculo: Veiculo, status: StatusTiket, formaDePagamento: FormaDePagamento | null = null,){
+    constructor(
+        veiculo: Veiculo, 
+        dataEntrada: Date,
+        dataSaida: Date | null,
+        valorPorHora: number,
+        status: StatusTiket, 
+        formaDePagamento: FormaDePagamento | null = null,
+        numeroDaVaga: string | null,
+    ){
         this.veiculo = veiculo;
 
-        if(!formaDePagamento || status == "Em aberto"){
-            this._formaDePagamento = "Em aberto";
-        }else{
-            this.formaDePagamento = formaDePagamento as FormaDePagamento;
-        }
-        
+        this.valorPorHora = valorPorHora;
+        this.dataDeEntrada = dataEntrada;
+        this.formaDePagamento = formaDePagamento;
+
         this.status = status;
+
+        if(dataSaida && status == "Pago"){
+            this._dataDeSaida = dataSaida;
+        }else if(this.status == "Em aberto"){
+            this._dataDeSaida = new Date();
+        }
+
+        this.numeroDaVaga = numeroDaVaga;
     }
 
-    set formaDePagamento(formaDePagamento: FormaDePagamento)
+    set formaDePagamento(formaDePagamento: FormaDePagamento | null)
     {
-        if(!formaDePagamento.ativa){
+        if(formaDePagamento && !formaDePagamento.ativa){
             throw new Error("Forma de pagamento intativa");
         }
 
         this._formaDePagamento = formaDePagamento;
     }
-}
 
+    get formaDePagamento(): FormaDePagamento | null
+    {
+        return this._formaDePagamento;
+    }
+
+    get dataDeSaida(): Date
+    {
+        return this._dataDeSaida;
+    }
+
+    public fecharTiket(formaDePagamento: FormaDePagamento)
+    {
+        if(this.status == "Pago"){
+            console.warn("O tiket já foi pago.");
+            return;
+        }
+
+        this.formaDePagamento = formaDePagamento;
+        this._dataDeSaida = new Date();
+
+    }
+
+    get totalAPagar(): number
+    {
+        return this.tempoDecorrido * this.valorPorHora;
+    }
+
+
+    get tempoDecorrido(): number
+    {
+        if(this.status == "Em aberto"){
+            this._dataDeSaida = new Date();
+        }
+
+        const diff = this._dataDeSaida.getTime() - this.dataDeEntrada.getTime();
+
+        const totalMinutos = diff / 1000 / 60;
+
+        const horas = Math.trunc(totalMinutos / 60);
+
+        const minutos = totalMinutos % 60;
+
+        return Number(`${horas}.${minutos}`);
+    }
+}
