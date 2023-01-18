@@ -10,7 +10,6 @@ import { RepresentacaoEstacionamento } from './RepresentacaoEstacionamento.js';
 import { Tiket } from './models/Tiket.js';
 import { Veiculo } from './models/Veiculo.js';
 import { FormaDePagamento } from './models/FormaDePagamento.js';
-import { StatusTiket } from './enums/StatusTiket.js';
 import { TiketController } from './controllers/tiket-controller.js';
 import { configuraInputsDePlaca } from './padraoInputPlaca.js';
 

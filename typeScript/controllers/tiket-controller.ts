@@ -5,7 +5,6 @@ import { ProxyFactory } from "../services/ProxyFactory.js";
 import { FormAddTiketView } from "../views/formAddTiket-view.js";
 import { $ } from "../lib/funcoesUtilitarias.js";
 import { Tiket } from "../models/Tiket.js";
-import { StatusTiket } from "../enums/StatusTiket.js";
 import { FormaDePagamento } from "../models/FormaDePagamento.js";
 import { Precificacao } from "../models/Precificacao.js";
 import { ConnectionFactory } from "../services/ConnectionFactory.js";
@@ -55,7 +54,7 @@ export class TiketController
             DateHelper.transformaStringEmDate(dataEntrada),
             null,
             valorHora,
-            StatusTiket["Em aberto"],
+            "Em aberto",
             null,
             numeroDaVaga,
         );

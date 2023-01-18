@@ -1,4 +1,3 @@
-import { StatusTiket } from "../enums/StatusTiket.js";
 import { FormaDePagamento } from "./FormaDePagamento.js";
 import { Veiculo } from "./Veiculo.js";
 
@@ -7,7 +6,7 @@ export class Tiket
     public readonly id: number | null = null;
     public readonly veiculo: Veiculo;
     private _formaDePagamento: FormaDePagamento | null;
-    public status: StatusTiket;
+    public status: "Em aberto" | "Pago";
     public readonly valorPorHora: number;
     public readonly dataDeEntrada: Date;
     private _dataDeSaida: Date;
@@ -19,7 +18,7 @@ export class Tiket
         dataEntrada: Date,
         dataSaida: Date | null,
         valorPorHora: number,
-        status: StatusTiket, 
+        status: "Em aberto" | "Pago", 
         formaDePagamento: FormaDePagamento | null = null,
         numeroDaVaga: string | null,
     ){
