@@ -1,5 +1,7 @@
 export class Tiket {
-    constructor(veiculo, dataEntrada, dataSaida, valorPorHora, status, formaDePagamento = null, numeroDaVaga) {
+    constructor(id, veiculo, dataEntrada, dataSaida, valorPorHora, status, formaDePagamento = null, numeroDaVaga) {
+        this.id = null;
+        this.id = id;
         this.veiculo = veiculo;
         this.valorPorHora = valorPorHora;
         this.dataDeEntrada = dataEntrada;

@@ -4,6 +4,8 @@ import { PrecificacoesService } from "../services/PrecificacoesService.js";
 import { FormAddTiketView } from "../views/formAddTiket-view.js";
 import { Tiket } from "../models/Tiket.js";
 import { StatusTiket } from "../enums/StatusTiket.js";
+import { ConnectionFactory } from "../services/ConnectionFactory.js";
+import { TiketsDao } from "../dao/TiketsDao.js";
 export class TiketController {
     constructor() {
         this.formView = new FormAddTiketView("#formAdcTiketView", this);
@@ -31,7 +33,13 @@ export class TiketController {
         const numeroDaVaga = formulario.numeroDaVaga.value;
         const dataEntrada = formulario.dataEntrada.value;
         const veiculo = new Veiculo(placa, marca, modelo, categoria);
-        const tiket = new Tiket(veiculo, DateHelper.transformaStringEmDate(dataEntrada), null, valorHora, StatusTiket["Em aberto"], null, numeroDaVaga);
+        const tiket = new Tiket(null, veiculo, DateHelper.transformaStringEmDate(dataEntrada), null, valorHora, StatusTiket["Em aberto"], null, numeroDaVaga);
+        let connection;
+        ConnectionFactory.getConnection()
+            .then(conn => {
+            connection = conn;
+            const tiketsDao = new TiketsDao(connection);
+        });
     }
     buscaVeiculoPorPlaca(placa) {
         if (placa == 'APN-2018') {

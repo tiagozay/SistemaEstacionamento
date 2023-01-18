@@ -4,6 +4,7 @@ import { Veiculo } from "./Veiculo.js";
 
 export class Tiket
 {
+    public readonly id: number | null = null;
     public readonly veiculo: Veiculo;
     private _formaDePagamento: FormaDePagamento | null;
     public status: StatusTiket;
@@ -13,6 +14,7 @@ export class Tiket
     public readonly numeroDaVaga: string | null;
 
     constructor(
+        id: number | null,
         veiculo: Veiculo, 
         dataEntrada: Date,
         dataSaida: Date | null,
@@ -21,6 +23,8 @@ export class Tiket
         formaDePagamento: FormaDePagamento | null = null,
         numeroDaVaga: string | null,
     ){
+        this.id = id;
+
         this.veiculo = veiculo;
 
         this.valorPorHora = valorPorHora;

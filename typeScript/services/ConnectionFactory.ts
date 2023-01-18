@@ -6,7 +6,7 @@ export abstract class ConnectionFactory
     private static metodoCloseConnection: Function | null;
     private static connection: IDBDatabase | null = null;
 
-    public static getConnection(){
+    public static getConnection(): Promise<IDBDatabase>{
         return new Promise((resolve, reject) => {
             const openRequest = window.indexedDB.open(
                 this.dbname, 
@@ -36,7 +36,7 @@ export abstract class ConnectionFactory
                     }                   
                 }
 
-                resolve(this.connection);
+                resolve(this.connection as IDBDatabase);
             }
     
             openRequest.onerror = e => {

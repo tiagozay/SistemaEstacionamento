@@ -8,6 +8,8 @@ import { Tiket } from "../models/Tiket.js";
 import { StatusTiket } from "../enums/StatusTiket.js";
 import { FormaDePagamento } from "../models/FormaDePagamento.js";
 import { Precificacao } from "../models/Precificacao.js";
+import { ConnectionFactory } from "../services/ConnectionFactory.js";
+import { TiketsDao } from "../dao/TiketsDao.js";
 
 
 export class TiketController
@@ -48,6 +50,7 @@ export class TiketController
         const veiculo = new Veiculo(placa, marca, modelo, categoria);
 
         const tiket = new Tiket(
+            null,
             veiculo, 
             DateHelper.transformaStringEmDate(dataEntrada),
             null,
@@ -56,6 +59,17 @@ export class TiketController
             null,
             numeroDaVaga,
         );
+
+        let connection: IDBDatabase;
+
+        ConnectionFactory.getConnection()
+            .then( conn => {
+
+                connection = conn as IDBDatabase;
+
+                const tiketsDao = new TiketsDao(connection);
+
+            });
 
     }
 
