@@ -5,7 +5,7 @@ import { listarMensalidades } from './listagemMensalidades.js';
 import { listarPrecificacoes } from './listagemPrecificacoes.js';
 import { listarFormasDePagamento } from './listagemFormasDePagamento.js';
 import { listarUsuarios } from './listagemUsuarios.js';
-import { configuraPaginacao } from './paginacao.js';
+import { Paginacao } from './Paginacao.js';
 import { RepresentacaoEstacionamento } from './RepresentacaoEstacionamento.js';
 import { TiketController } from './controllers/tiket-controller.js';
 import { configuraInputsDePlaca } from './padraoInputPlaca.js';
@@ -18,6 +18,6 @@ listarPrecificacoes();
 listarFormasDePagamento();
 listarUsuarios();
 RepresentacaoEstacionamento.estacionarVeiculo("c1", 'APN-2018');
-const tiketController = new TiketController();
-configuraPaginacao();
+const paginacao = new Paginacao();
+paginacao.addEventToPage('formularioAdcNovoTiket', () => new TiketController());
 //# sourceMappingURL=app.js.map

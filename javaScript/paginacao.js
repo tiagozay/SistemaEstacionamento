@@ -1,23 +1,4 @@
 import { $, $all } from './lib/funcoesUtilitarias.js';
-export function configuraPaginacao() {
-    const btnsDeTrocarDePaginaMenu = $all('.btnTrocarDePaginaMenu');
-    btnsDeTrocarDePaginaMenu.forEach(btn => btn.addEventListener('click', event => {
-        let target = event.target;
-        if (target.classList.contains('material-icons')) {
-            target = target.parentNode;
-        }
-        trocarDePagina(target.dataset.pagina);
-    }));
-    document.addEventListener('click', (event) => {
-        let alvo = event.target;
-        if (alvo.classList.contains('btnTrocarDePagina')) {
-            if (alvo.classList.contains('material-icons')) {
-                alvo = alvo.parentNode;
-            }
-            trocarDePagina(alvo.dataset.pagina);
-        }
-    });
-}
 const paginas = [
     { idPagina: 'home', paginaMae: null },
     { idPagina: 'estacionamento', paginaMae: null },
@@ -34,26 +15,59 @@ const paginas = [
     { idPagina: 'formCadastrarFormaDePagamento', paginaMae: 'formas_de_pagamento' },
     { idPagina: 'formularioAdicionarNovoUsuario', paginaMae: 'usuarios' },
 ];
-function trocarDePagina(idPagina) {
-    const paginaAtivada = $('.pagina-ativada');
-    paginaAtivada.classList.remove('pagina-ativada');
-    paginaAtivada.classList.add('pagina-desativada');
-    const pagina = $(`#${idPagina}`);
-    pagina.classList.remove("pagina-desativada");
-    pagina.classList.add('pagina-ativada');
-    ativaBtnMenuDeAcordoComPagina(idPagina);
-}
-function ativaBtnMenuDeAcordoComPagina(idPaginaAtivada) {
-    //Verifica se a página selecionada tem uma mãe, se ela tiver é sinal que o botão que chamou ela não é do menu lateral, assim não é nescessário adicionar uma classe de estilo à ele.
-    const pagBuscada = paginas.find(pagina => pagina.idPagina == idPaginaAtivada);
-    if (pagBuscada && pagBuscada.paginaMae) {
-        return;
+export class Paginacao {
+    constructor() {
+        this.paginaAtivada = $(".pagina-ativada");
+        this.btnAtivado = $(".opcaoMenuSelecionado");
+        this.events = [];
+        const btnsDeTrocarDePaginaMenu = $all('.btnTrocarDePaginaMenu');
+        btnsDeTrocarDePaginaMenu.forEach(btn => btn.addEventListener('click', event => {
+            let target = event.target;
+            if (target.classList.contains('material-icons')) {
+                target = target.parentNode;
+            }
+            this.trocarDePagina(target.dataset.pagina);
+        }));
+        document.addEventListener('click', (event) => {
+            let alvo = event.target;
+            if (alvo.classList.contains('btnTrocarDePagina')) {
+                if (alvo.classList.contains('material-icons')) {
+                    alvo = alvo.parentNode;
+                }
+                this.trocarDePagina(alvo.dataset.pagina);
+            }
+        });
     }
-    const btnAtivado = $('.opcaoMenuSelecionado');
-    if (btnAtivado) {
-        btnAtivado.classList.remove('opcaoMenuSelecionado');
+    trocarDePagina(idPagina) {
+        if (this.paginaAtivada) {
+            this.paginaAtivada.classList.remove('pagina-ativada');
+            this.paginaAtivada.classList.add('pagina-desativada');
+        }
+        const pagina = $(`#${idPagina}`);
+        pagina.classList.remove("pagina-desativada");
+        pagina.classList.add('pagina-ativada');
+        this.paginaAtivada = pagina;
+        this.ativaBtnMenuDeAcordoComPagina(idPagina);
+        const eventChangePage = this.events.find(event => event.pageId == idPagina);
+        if (eventChangePage === null || eventChangePage === void 0 ? void 0 : eventChangePage.callBack) {
+            eventChangePage.callBack();
+        }
     }
-    const btnMenu = $(`[data-pagina=${idPaginaAtivada}]`);
-    btnMenu.classList.add("opcaoMenuSelecionado");
+    ativaBtnMenuDeAcordoComPagina(idPaginaAtivada) {
+        //Verifica se a página selecionada tem uma mãe, se ela tiver é sinal que o botão que chamou ela não é do menu lateral, assim não é nescessário adicionar uma classe de estilo à ele.
+        const pagBuscada = paginas.find(pagina => pagina.idPagina == idPaginaAtivada);
+        if (pagBuscada && pagBuscada.paginaMae) {
+            return;
+        }
+        if (this.btnAtivado) {
+            this.btnAtivado.classList.remove('opcaoMenuSelecionado');
+        }
+        const btnMenu = $(`[data-pagina=${idPaginaAtivada}]`);
+        btnMenu.classList.add("opcaoMenuSelecionado");
+        this.btnAtivado = btnMenu;
+    }
+    addEventToPage(pageId, callBack) {
+        this.events.push({ pageId: pageId, callBack: callBack });
+    }
 }
 //# sourceMappingURL=paginacao.js.map

@@ -1,35 +1,5 @@
 import {$, $all} from './lib/funcoesUtilitarias.js';
 
-export function configuraPaginacao()
-{
-    const btnsDeTrocarDePaginaMenu = $all('.btnTrocarDePaginaMenu');
-    btnsDeTrocarDePaginaMenu.forEach( btn => btn.addEventListener('click', event => {
-       
-        let target = event.target as HTMLElement;
-    
-        if(target.classList.contains('material-icons')){
-            target = target.parentNode as HTMLElement;
-        }
-    
-        trocarDePagina(target.dataset.pagina as string);
-    
-    } ) );
-    
-    document.addEventListener('click', (event: Event) => {
-        let alvo = event.target as HTMLElement;
-
-        if(alvo.classList.contains('btnTrocarDePagina')){
-    
-            if(alvo.classList.contains('material-icons')){
-                alvo = alvo.parentNode as HTMLElement;
-            }
-        
-            trocarDePagina(alvo.dataset.pagina as string);
-        }
-
-    });
-}
-
 const paginas = [
     {idPagina: 'home', paginaMae: null},
     {idPagina: 'estacionamento', paginaMae: null},
@@ -47,37 +17,86 @@ const paginas = [
     {idPagina: 'formularioAdicionarNovoUsuario', paginaMae: 'usuarios'},
 ];
 
-
-function trocarDePagina(idPagina: string)
+export class Paginacao
 {
-    const paginaAtivada = $('.pagina-ativada') as HTMLElement;
+    private paginaAtivada: HTMLElement | null = $(".pagina-ativada");
+    private btnAtivado: HTMLElement | null = $(".opcaoMenuSelecionado");
+    private events: Array<{pageId: string, callBack: Function}> = []; 
 
-    paginaAtivada.classList.remove('pagina-ativada');
-    paginaAtivada.classList.add('pagina-desativada');
+    constructor()
+    {
+        const btnsDeTrocarDePaginaMenu = $all('.btnTrocarDePaginaMenu');
+        btnsDeTrocarDePaginaMenu.forEach( btn => btn.addEventListener('click', event => {
+           
+            let target = event.target as HTMLElement;
+        
+            if(target.classList.contains('material-icons')){
+                target = target.parentNode as HTMLElement;
+            }
+        
+            this.trocarDePagina(target.dataset.pagina as string);
+        
+        } ) );
+        
+        document.addEventListener('click', (event: Event) => {
+            let alvo = event.target as HTMLElement;
+    
+            if(alvo.classList.contains('btnTrocarDePagina')){
+        
+                if(alvo.classList.contains('material-icons')){
+                    alvo = alvo.parentNode as HTMLElement;
+                }
+            
+                this.trocarDePagina(alvo.dataset.pagina as string);
+            }
+    
+        });
+    }
+     
+    private trocarDePagina(idPagina: string)
+    {
+        if(this.paginaAtivada){
+            this.paginaAtivada.classList.remove('pagina-ativada');
+            this.paginaAtivada.classList.add('pagina-desativada');
+        }
+      
+        const pagina = $(`#${idPagina}`) as HTMLElement;
 
-    const pagina = $(`#${idPagina}`) as HTMLElement;
+        pagina.classList.remove("pagina-desativada");
+        pagina.classList.add('pagina-ativada'); 
 
-    pagina.classList.remove("pagina-desativada");
-    pagina.classList.add('pagina-ativada'); 
+        this.paginaAtivada = pagina;
 
-    ativaBtnMenuDeAcordoComPagina(idPagina);
-}
+        this.ativaBtnMenuDeAcordoComPagina(idPagina);
 
-function ativaBtnMenuDeAcordoComPagina(idPaginaAtivada: string)
-{
-    //Verifica se a página selecionada tem uma mãe, se ela tiver é sinal que o botão que chamou ela não é do menu lateral, assim não é nescessário adicionar uma classe de estilo à ele.
-    const pagBuscada = paginas.find( pagina => pagina.idPagina == idPaginaAtivada )
-    if(pagBuscada && pagBuscada.paginaMae){
-        return;
+        const eventChangePage = this.events.find( event => event.pageId == idPagina );
+
+        if(eventChangePage?.callBack){
+            eventChangePage.callBack();
+        }
     }
 
-    const btnAtivado = $('.opcaoMenuSelecionado');
+    private ativaBtnMenuDeAcordoComPagina(idPaginaAtivada: string)
+    {
+        //Verifica se a página selecionada tem uma mãe, se ela tiver é sinal que o botão que chamou ela não é do menu lateral, assim não é nescessário adicionar uma classe de estilo à ele.
+        const pagBuscada = paginas.find( pagina => pagina.idPagina == idPaginaAtivada )
+        if(pagBuscada && pagBuscada.paginaMae){
+            return;
+        }
 
-    if(btnAtivado){
-        btnAtivado.classList.remove('opcaoMenuSelecionado');
+        if(this.btnAtivado){
+            this.btnAtivado.classList.remove('opcaoMenuSelecionado');
+        }
+    
+        const btnMenu = $(`[data-pagina=${idPaginaAtivada}]`) as HTMLElement;
+
+        btnMenu.classList.add("opcaoMenuSelecionado");
+
+        this.btnAtivado = btnMenu;
     }
- 
-    const btnMenu = $(`[data-pagina=${idPaginaAtivada}]`) as HTMLElement;
 
-    btnMenu.classList.add("opcaoMenuSelecionado");
+    public addEventToPage(pageId: string, callBack: Function): void
+    {
+        this.events.push({pageId: pageId, callBack: callBack});
+    }
 }
