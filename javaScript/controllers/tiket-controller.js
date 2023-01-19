@@ -5,6 +5,7 @@ import { FormAddTiketView } from "../views/formAddTiket-view.js";
 import { Tiket } from "../models/Tiket.js";
 import { ConnectionFactory } from "../services/ConnectionFactory.js";
 import { TiketsDao } from "../dao/TiketsDao.js";
+import { ErrorInputService } from "../services/ErrorInputService.js";
 export class TiketController {
     constructor() {
         this.formView = new FormAddTiketView("#formAdcTiketView", this);
@@ -23,12 +24,18 @@ export class TiketController {
     }
     cadastra(event) {
         const formulario = event.target;
+        if (!this.validaInputs(formulario)) {
+            return;
+        }
         const placa = formulario.placa.value;
         const marca = formulario.marca.value;
         const modelo = formulario.modelo.value;
         const categoria = formulario.categoria.value;
         const precificacao = PrecificacoesService.buscaPrecificacaoDeCategoria(categoria);
-        const valorHora = precificacao.valorHora;
+        const valorHora = 0;
+        if (precificacao) {
+            const valorHora = precificacao.valorHora;
+        }
         const numeroDaVaga = formulario.numeroDaVaga.value;
         const dataEntrada = formulario.dataEntrada.value;
         const veiculo = new Veiculo(placa, marca, modelo, categoria);
@@ -39,6 +46,22 @@ export class TiketController {
             connection = conn;
             const tiketsDao = new TiketsDao(connection);
         });
+    }
+    validaInputs(formulario) {
+        let formValido = true;
+        const inputs = [...formulario.querySelectorAll(".inputObrigatorio")];
+        const inputsDigitaveis = inputs.filter(input => !input.getAttribute("readonly"));
+        inputsDigitaveis.forEach(input => {
+            if (input.value.trim().length == 0 || input.value == 'null') {
+                ErrorInputService.closeError(input);
+                ErrorInputService.openError(input, `O campo ${input.name} é obrigatório`);
+                formValido = false;
+            }
+            else {
+                ErrorInputService.closeError(input);
+            }
+        });
+        return formValido;
     }
     buscaVeiculoPorPlaca(placa) {
         if (placa == 'APN-2018') {

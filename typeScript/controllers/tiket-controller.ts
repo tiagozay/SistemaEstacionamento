@@ -9,6 +9,7 @@ import { FormaDePagamento } from "../models/FormaDePagamento.js";
 import { Precificacao } from "../models/Precificacao.js";
 import { ConnectionFactory } from "../services/ConnectionFactory.js";
 import { TiketsDao } from "../dao/TiketsDao.js";
+import { ErrorInputService } from "../services/ErrorInputService.js";
 
 
 export class TiketController
@@ -37,12 +38,22 @@ export class TiketController
     {
         const formulario = event.target as HTMLFormElement;
 
+        if(!this.validaInputs(formulario)){
+            return;
+        }
+
         const placa = formulario.placa.value;
         const marca = formulario.marca.value;
         const modelo = formulario.modelo.value;
         const categoria = formulario.categoria.value; 
-        const precificacao = PrecificacoesService.buscaPrecificacaoDeCategoria(categoria) as Precificacao;
-        const valorHora = precificacao.valorHora; 
+        const precificacao = PrecificacoesService.buscaPrecificacaoDeCategoria(categoria);
+
+        const valorHora = 0;
+
+        if(precificacao){
+            const valorHora = precificacao.valorHora; 
+        }
+        
         const numeroDaVaga = formulario.numeroDaVaga.value;
         const dataEntrada = formulario.dataEntrada.value;
 
@@ -70,6 +81,27 @@ export class TiketController
 
             });
 
+    }
+
+    private validaInputs(formulario: HTMLFormElement): boolean
+    {
+        let formValido = true;
+
+        const inputs: Array<HTMLInputElement | HTMLSelectElement>  = [...formulario.querySelectorAll(".inputObrigatorio")] as Array<HTMLInputElement | HTMLSelectElement>;
+
+        const inputsDigitaveis = inputs.filter( input => !input.getAttribute("readonly") );
+
+        inputsDigitaveis.forEach( input => {
+            if(input.value.trim().length == 0 || input.value == 'null'){
+                ErrorInputService.closeError(input);
+                ErrorInputService.openError(input, `O campo ${input.name} é obrigatório`);
+                formValido = false;
+            }else{
+                ErrorInputService.closeError(input);
+            }
+        } );
+
+        return formValido;
     }
 
     buscaVeiculoPorPlaca(placa: string){

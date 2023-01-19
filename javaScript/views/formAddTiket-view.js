@@ -32,22 +32,23 @@ export class FormAddTiketView extends View {
             <div  class="linhaInputs">
                 <label for="">
                     Placa veículo
-                    <input type="text" class="padraoInputPlaca" name="placa" id="formCadastroTiket__inputPlaca" value="${model['placa'] ? model['placa'] : ""}">
+                    <input type="text" class="padraoInputPlaca inputObrigatorio" name="placa" id="formCadastroTiket__inputPlaca" value="${model['placa'] ? model['placa'] : ""}">
                 </label>
                 <label for="">
                     Marca veículo
-                    <input type="text" name="marca" value="${model['marcaVeiculo'] ? model['marcaVeiculo'] : ""}">
+                    <input type="text" class="inputObrigatorio" name="marca" value="${model['marcaVeiculo'] ? model['marcaVeiculo'] : ""}">
                 </label>
                 <label for="">
                     Modelo veículo
-                    <input type="text" name="modelo" value="${model['modeloVeiculo'] ? model['modeloVeiculo'] : ""}">
+                    <input type="text" class="inputObrigatorio" name="modelo" value="${model['modeloVeiculo'] ? model['modeloVeiculo'] : ""}">
                 </label>
             </div>
 
             <div  class="linhaInputs">
                 <label for="">
                     Categoria
-                    <select name="categoria" id="selectCategoria">
+                    <select class="inputObrigatorio" name="categoria" id="selectCategoria">
+                    <option value="null">Selecione</option>
                      ${function () {
             const categorias = model['categorias'];
             const categoriaVeiculo = model['categoria'];
@@ -57,7 +58,7 @@ export class FormAddTiketView extends View {
                 </label>
                 <label for="">
                     Valor hora
-                    <input type="text" name="valorHora" class="inputDesativado" readonly value=${model['valorHora'] ? model['valorHora'] : ""}> 
+                    <input type="text" name="valorHora" class="inputDesativado inputObrigatorio" readonly="true" value=${model['valorHora'] ? model['valorHora'] : ""}> 
                 </label>
                 <label for="">
                     Número vaga
@@ -68,15 +69,15 @@ export class FormAddTiketView extends View {
             <div  class="linhaInputs">
                 <label for="">
                     Data entrada
-                    <input type="text" name="dataEntrada" class="inputDesativado" readonly value="${DateHelper.formataDataComHorario((new Date()))}">
+                    <input type="text" name="dataEntrada" class="inputDesativado inputObrigatorio" readonly="true" value="${DateHelper.formataDataComHorario((new Date()))}">
                 </label>
                 <label for="">
                     Data saída
-                    <input type="text" name="dataSaida" class="inputDesativado" readonly value="${DateHelper.formataDataComHorario((new Date()))} | Em aberto">
+                    <input type="text" name="dataSaida" class="inputDesativado" readonly="true" value="${DateHelper.formataDataComHorario((new Date()))} | Em aberto">
                 </label>
                 <label for="">
                     Tempo decorrido (horas e minutos)
-                    <input type="text" class="inputDesativado" readonly value="0.0">
+                    <input type="text" class="inputDesativado inputObrigatorio" readonly="true" value="0.0">
                 </label>
             </div>
 

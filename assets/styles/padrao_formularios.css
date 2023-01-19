@@ -85,3 +85,8 @@
 .formPadrao__btnVoltar:hover{
     background-color: rgb(215, 215, 215);
 }
+.msgErroInput{
+    color: #fc204c;
+    margin-top: 2px;
+    font-size: 13px;
+}
