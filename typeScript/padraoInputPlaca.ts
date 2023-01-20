@@ -6,11 +6,11 @@ export function configuraInputsDePlaca()
     
         if(alvo.classList.contains('padraoInputPlaca')){
     
-            alvo.value = alvo.value.toUpperCase();
+            alvo.value = alvo.value.toUpperCase().trim();
 
             //Este if faz com que o limite de caracteres para a placa não seja atingido, fique em 7, desconsiderando o traço
-            if(alvo.value.replace(/-/, '').trim().length > 7){
-                alvo.value = alvo.value.substring(0, 8);
+            if(alvo.value.replace(/-/, '').length > 7){
+                alvo.value = alvo.value.replace(/-/, '').substring(0, 7);
             }
     
             if(alvo.value[4]?.match(/[0-9]/)){
